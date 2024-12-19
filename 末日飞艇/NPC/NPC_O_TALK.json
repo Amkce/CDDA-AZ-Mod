@@ -1,0 +1,441 @@
+[
+    {
+        "type": "talk_topic",
+        "id": "TALK_AZ_AA_OUTER",
+        "dynamic_line": [
+            "很抱歉，但是我现在不想聊天",
+            "我在准备下一次任务，也许下次吧",
+            "[他甚至都懒得看你一眼]",
+            "抱歉，我还有事要忙",
+            "我们小队人满了，下次吧",
+            "我还有事要忙，下次吧",
+            "有什么事之后再说"
+        ],
+        "responses": [
+            { "text": "再见！", "topic": "TALK_DONE" }
+        ]
+    },
+
+    {
+        "type":"talk_topic",
+        "id":"TALK_AZ_AA_OUTER_Mission",
+        "dynamic_line":[
+            "我可以为你做什么？"
+        ],
+        "responses":[
+            {"text":"我打算购买一些功勋物品","topic":"TALK_AZ_AA_BUY_SPECIFIC"},
+            {"text":"我来看看有什么任务","topic":"TALK_AZ_AA_CHOOSE_Mission"},
+            {"text":"我来交任务","topic":"TALK_AZ_AA_COMPLETE_Mission"},
+            {"text":"我之后在来吧。","topic":"TALK_DONE"}
+        ]
+    },
+    {
+        "type":"talk_topic",
+        "id":"TALK_AZ_AA_BUY_SPECIFIC",
+        "dynamic_line":[
+            "[他递给你了一张清单]，挑选好后告诉我。\n\n[10商会币 1功勋]\n[100商会币 10功勋]\n[空中支援 10功勋]\n[万能药 25功勋]"
+        ],
+        "responses":[
+            {
+                "text": "[1功勋]我需要10商会币。",
+                "topic": "TALK_AZ_AA_BUY_SPECIFIC",
+                "condition": { "u_has_items": { "item": "AZ_AA_FEAT", "count": 1 } },
+                "effect": 
+                    [
+                        { "u_consume_item": "AZ_AA_FEAT", "count": 1, "popup": true },
+                        { "u_spawn_item": "FMCNote", "count": 10 }
+                    ]
+            },
+            {
+                "text": "[10功勋]我需要100商会币。",
+                "topic": "TALK_AZ_AA_BUY_SPECIFIC",
+                "condition": { "u_has_items": { "item": "AZ_AA_FEAT", "count": 10 } },
+                "effect": 
+                    [
+                        { "u_consume_item": "AZ_AA_FEAT", "count": 10, "popup": true },
+                        { "u_spawn_item": "FMCNote", "count": 100 }
+                    ]
+            },
+            {
+                "text": "[10功勋]需要空中支援(100kg航弹)。",
+                "topic": "TALK_AZ_AA_BUY_SPECIFIC",
+                "condition": { "u_has_items": { "item": "AZ_AA_FEAT", "count": 10 } },
+                "effect": 
+                    [
+                        { "u_consume_item": "AZ_AA_FEAT", "count": 10, "popup": true },
+                        { "u_spawn_item": "AZ_AA_AIR_BAG", "count": 1 }
+                    ]
+            },
+            {
+                "text": "[10功勋]需要空中支援(100kg空爆弹)。",
+                "topic": "TALK_AZ_AA_BUY_SPECIFIC",
+                "condition": { "u_has_items": { "item": "AZ_AA_FEAT", "count": 10 } },
+                "effect": 
+                    [
+                        { "u_consume_item": "AZ_AA_FEAT", "count": 10, "popup": true },
+                        { "u_spawn_item": "AZ_AA_AIR_BAG_2", "count": 1 }
+                    ]
+            },
+            {
+                "text": "[25功勋]需要一份万能药。",
+                "topic": "TALK_AZ_AA_BUY_SPECIFIC",
+                "condition": { "u_has_items": { "item": "AZ_AA_FEAT", "count": 25 } },
+                "effect": 
+                    [
+                        { "u_consume_item": "AZ_AA_FEAT", "count": 25, "popup": true },
+                        { "u_spawn_item": "panacea", "count": 1 }
+                    ]
+            },
+            {"text":"谢谢，就这些吧。","topic":"TALK_DONE"}
+        ]
+    },
+    {
+        "type":"talk_topic",
+        "id":"TALK_AZ_AA_CHOOSE_Mission",
+        "dynamic_line":[
+            "[他递给你了一张任务表]，很好，挑选好后告诉我。请注意，同一种类型的任务只能同时拥有一个。（不同的难度算作不同类型）"
+        ],
+        "responses":[
+            {
+                "text": "[接取清理任务（易）]",
+                "condition": { "not": { "u_has_mission": "MISSION_AZ_AA_KILL_MONSTER" } },
+                "topic": "TALK_AZ_AA_CHOOSE_Mission_1"
+            },
+            {
+                "text": "[接取清理任务（中）]",
+                "condition": { "not": { "u_has_mission": "MISSION_AZ_AA_KILL_MONSTER_More" } },
+                "topic": "TALK_AZ_AA_CHOOSE_Mission_2"
+            },
+            {
+                "text": "[接取清理任务（难）]",
+                "condition": { "not": { "u_has_mission": "MISSION_AZ_AA_KILL_MONSTER_Moreeee" } },
+                "topic": "TALK_AZ_AA_CHOOSE_Mission_3"
+            },
+            {
+                "text": "[接取回收任务]",
+                "condition": { "not": { "u_has_mission": "MISSION_AZ_AA_FIND_RECORD" } },
+                "topic": "TALK_AZ_AA_CHOOSE_Mission_4"
+            },
+            {
+                "text": "[接取剿匪任务（易）]",
+                "condition": { "not": { "u_has_mission": "MISSION_AZ_AA_KILL_THUG" } },
+                "topic": "TALK_AZ_AA_CHOOSE_Mission_5"
+            },
+            {
+                "text": "[接取剿匪任务（难）]",
+                "condition": { "not": { "u_has_mission": "MISSION_AZ_AA_KILL_THUG_More" } },
+                "topic": "TALK_AZ_AA_CHOOSE_Mission_6"
+            },
+            {
+                "text": "[接取侦查任务]",
+                "condition": { "not": { "u_has_mission": "MISSION_AZ_AA_SPY" } },
+                "topic": "TALK_AZ_AA_CHOOSE_Mission_7"
+            },
+            {"text":"我之后在来吧。","topic":"TALK_DONE"}
+        ]
+    },
+    {
+        "type":"talk_topic",
+        "id":"TALK_AZ_AA_CHOOSE_Mission_1",
+        "dynamic_line":[
+            "好，已记录。任务地点已经标记在你的地图上。"
+        ],
+        "responses":[
+            {
+                "text":"好的，我会尽快完成。","topic":"TALK_DONE",
+                "effect":{ "assign_mission": "MISSION_AZ_AA_KILL_MONSTER" }
+            }
+        ]
+    },
+    {
+        "type":"talk_topic",
+        "id":"TALK_AZ_AA_CHOOSE_Mission_2",
+        "dynamic_line":[
+            "好，已记录。任务地点已经标记在你的地图上。"
+        ],
+        "responses":[
+            {
+                "text":"好的，我会尽快完成。","topic":"TALK_DONE",
+                "effect":{ "assign_mission": "MISSION_AZ_AA_KILL_MONSTER_More" }
+            }
+        ]
+    },
+    {
+        "type":"talk_topic",
+        "id":"TALK_AZ_AA_CHOOSE_Mission_3",
+        "dynamic_line":[
+            "好，已记录。任务地点已经标记在你的地图上。"
+        ],
+        "responses":[
+            {
+                "text":"好的，我会尽快完成。","topic":"TALK_DONE",
+                "effect":{ "assign_mission": "MISSION_AZ_AA_KILL_MONSTER_Moreeee" }
+            }
+        ]
+    },
+    {
+        "type":"talk_topic",
+        "id":"TALK_AZ_AA_CHOOSE_Mission_4",
+        "dynamic_line":[
+            "好，已记录。任务地点已经标记在你的地图上。"
+        ],
+        "responses":[
+            {
+                "text":"好的，我会尽快完成。","topic":"TALK_DONE",
+                "effect":{ "assign_mission": "MISSION_AZ_AA_FIND_RECORD" }
+            }
+        ]
+    },
+    {
+        "type":"talk_topic",
+        "id":"TALK_AZ_AA_CHOOSE_Mission_5",
+        "dynamic_line":[
+            "好，已记录。任务地点已经标记在你的地图上。"
+        ],
+        "responses":[
+            {
+                "text":"好的，我会尽快完成。","topic":"TALK_DONE",
+                "effect":{ "assign_mission": "MISSION_AZ_AA_KILL_THUG" }
+            }
+        ]
+    },
+    {
+        "type":"talk_topic",
+        "id":"TALK_AZ_AA_CHOOSE_Mission_6",
+        "dynamic_line":[
+            "好，已记录。任务地点已经标记在你的地图上。"
+        ],
+        "responses":[
+            {
+                "text":"好的，我会尽快完成。","topic":"TALK_DONE",
+                "effect":{ "assign_mission": "MISSION_AZ_AA_KILL_THUG_More" }
+            }
+        ]
+    },
+    {
+        "type":"talk_topic",
+        "id":"TALK_AZ_AA_CHOOSE_Mission_7",
+        "dynamic_line":[
+            "好，已记录。任务地点已经标记在你的地图上。"
+        ],
+        "responses":[
+            {
+                "text":"好的，我会尽快完成。","topic":"TALK_DONE",
+                "effect":{ "assign_mission": "MISSION_AZ_AA_SPY" }
+            }
+        ]
+    },
+
+    {
+        "type":"talk_topic",
+        "id":"TALK_AZ_AA_COMPLETE_Mission",
+        "dynamic_line":[
+            "[他翻阅了你的任务记录] 你要提交哪些任务？"
+        ],
+        "responses":[
+            {
+                "text": "[提交清理任务（易）]",
+                "condition": { "u_has_var": "AZ_AA_complete_mission1","value":"yes" },
+                "topic": "TALK_AZ_AA_COMPLETE_Mission_1"
+            },
+            {
+                "text": "[提交清理任务（中）]",
+                "condition": { "u_has_var": "AZ_AA_complete_mission2","value":"yes" },
+                "topic": "TALK_AZ_AA_COMPLETE_Mission_2"
+            },
+            {
+                "text": "[提交清理任务（难）]",
+                "condition": { "u_has_var": "AZ_AA_complete_mission3","value":"yes" },
+                "topic": "TALK_AZ_AA_COMPLETE_Mission_3"
+            },
+            {
+                "text": "[提交回收任务]",
+                "condition": {
+                    "and": [
+                        { "u_has_var": "AZ_AA_complete_mission4","value":"yes" },
+                        { "u_has_items": { "item": "AZ_AA_RECORD", "count": 1 } }
+                    ]
+                  },
+                "topic": "TALK_AZ_AA_COMPLETE_Mission_4"
+            },
+            {
+                "text": "[提交剿匪任务（易）]",
+                "condition": { "u_has_var": "AZ_AA_complete_mission5","value":"yes" },
+                "topic": "TALK_AZ_AA_COMPLETE_Mission_5"
+            },
+            {
+                "text": "[提交剿匪任务（难）]",
+                "condition": { "u_has_var": "AZ_AA_complete_mission6","value":"yes" },
+                "topic": "TALK_AZ_AA_COMPLETE_Mission_6"
+            },
+            {
+                "text": "[提交侦查任务]",
+                "condition": { "u_has_var": "AZ_AA_complete_mission7","value":"yes" },
+                "topic": "TALK_AZ_AA_COMPLETE_Mission_7"
+            },
+            {"text":"我之后在来吧。","topic":"TALK_DONE"}
+        ]
+    },
+    {
+        "type":"talk_topic",
+        "id":"TALK_AZ_AA_COMPLETE_Mission_1",
+        "dynamic_line":[
+            "好的，已记录，这是你的奖励。"
+        ],
+        "responses":[
+            {
+                "text":"好的，再见。",
+                "topic":"TALK_DONE",
+                "effect":[
+                    { "u_spawn_item": "AZ_AA_FEAT", "count": 5 },
+                    { "u_lose_var": "AZ_AA_complete_mission1" }
+                ]
+            }
+        ]
+    },
+    {
+        "type":"talk_topic",
+        "id":"TALK_AZ_AA_COMPLETE_Mission_2",
+        "dynamic_line":[
+            "好的，已记录，这是你的奖励。"
+        ],
+        "responses":[
+            {
+                "text":"好的，再见。",
+                "topic":"TALK_DONE",
+                "effect":[
+                    { "u_spawn_item": "AZ_AA_FEAT", "count": 15 },
+                    { "u_lose_var": "AZ_AA_complete_mission2" }
+                ]
+            }
+        ]
+    },
+    {
+        "type":"talk_topic",
+        "id":"TALK_AZ_AA_COMPLETE_Mission_3",
+        "dynamic_line":[
+            "[惊讶的看着你]做的不错，已记录，这是你的奖励。"
+        ],
+        "responses":[
+            {
+                "text":"好的，再见。",
+                "topic":"TALK_DONE",
+                "effect":[
+                    { "u_spawn_item": "AZ_AA_FEAT", "count": 30 },
+                    { "u_lose_var": "AZ_AA_complete_mission3" }
+            ]
+            }
+        ]
+    },
+    {
+        "type":"talk_topic",
+        "id":"TALK_AZ_AA_COMPLETE_Mission_4",
+        "dynamic_line":[
+            "[她看上去有些悲伤]...已记录，这是你的奖励。"
+        ],
+        "responses":[
+            {
+                "text":"好的，再见。",
+                "topic":"TALK_DONE",
+                "effect":[
+                    { "u_spawn_item": "AZ_AA_FEAT", "count": 10 },
+                    { "u_consume_item": "AZ_AA_RECORD", "count": 1 ,"popup": true},
+                    { "u_lose_var": "AZ_AA_complete_mission4" }
+                ]
+            }
+        ]
+    },
+    {
+        "type":"talk_topic",
+        "id":"TALK_AZ_AA_COMPLETE_Mission_5",
+        "dynamic_line":[
+            "做的不错，已记录，这是你的奖励。"
+        ],
+        "responses":[
+            {
+                "text":"好的，再见。",
+                "topic":"TALK_DONE",
+                "effect":[
+                    { "u_spawn_item": "AZ_AA_FEAT", "count": 20 },
+                    { "u_lose_var": "AZ_AA_complete_mission5" }
+                ]
+            }
+        ]
+    },
+    {
+        "type":"talk_topic",
+        "id":"TALK_AZ_AA_COMPLETE_Mission_6",
+        "dynamic_line":[
+            "[她赞许的看着你]你做的非常好，已记录，这是你的奖励。"
+        ],
+        "responses":[
+            {
+                "text":"好的，再见。",
+                "topic":"TALK_DONE",
+                "effect":[
+                    { "u_spawn_item": "AZ_AA_FEAT", "count": 40 },
+                    { "u_lose_var": "AZ_AA_complete_mission6" }
+                ]
+            }
+        ]
+    },
+    {
+        "type":"talk_topic",
+        "id":"TALK_AZ_AA_COMPLETE_Mission_7",
+        "dynamic_line":[
+            "已记录，这是你的奖励。"
+        ],
+        "responses":[
+            {
+                "text":"好的，再见。",
+                "topic":"TALK_DONE",
+                "effect":[
+                    { "u_spawn_item": "AZ_AA_FEAT", "count": 3 },
+                    { "u_lose_var": "AZ_AA_complete_mission7" }
+                ]
+            }
+        ]
+    },
+
+    {
+        "type":"talk_topic",
+        "id":"TALK_AZ_AA_BUY_FEAT",
+        "dynamic_line":[
+            "嘿！伙计，你想不想买一些功勋？"
+        ],
+        "responses":[
+            {"text":"得看价位如何了。","topic":"TALK_AZ_AA_BUY_FEAT_1"},
+            {"text":"暂时不需要。","topic":"TALK_DONE"}
+        ]
+    },
+    {
+        "type":"talk_topic",
+        "id":"TALK_AZ_AA_BUY_FEAT_1",
+        "dynamic_line":[
+            "20商会币，1功勋。不讲价。当然，你买的多可以给你一个小折扣。"
+        ],
+        "responses":[
+            {
+                "text": "[20商会币]给我一个。",
+                "topic": "TALK_AZ_AA_BUY_FEAT_1",
+                "condition": { "u_has_items": { "item": "FMCNote", "count": 20 } },
+                "effect": 
+                    [
+                        { "u_consume_item": "FMCNote", "count": 20, "popup": true },
+                        { "u_spawn_item": "AZ_AA_FEAT", "count": 1 }
+                    ]
+            },
+            {
+                "text": "[180商会币]给我十个。",
+                "topic": "TALK_AZ_AA_BUY_FEAT_1",
+                "condition": { "u_has_items": { "item": "FMCNote", "count": 180 } },
+                "effect": 
+                    [
+                        { "u_consume_item": "FMCNote", "count": 180, "popup": true },
+                        { "u_spawn_item": "AZ_AA_FEAT", "count": 10 }
+                    ]
+            },
+            {"text":"好了，就这些，再见。","topic":"TALK_DONE"}
+        ]
+    }
+]

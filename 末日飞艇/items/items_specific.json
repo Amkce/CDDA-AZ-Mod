@@ -1,0 +1,180 @@
+[
+    {
+        "id": "AZ_AA_AIR_BAG",
+        "type": "TOOL",
+        "category": "weapons",
+        "name": {
+          "str": "空袭信号发生器(100kg航弹)",
+          "str_pl": "空袭信号发生器(100kg航弹)"
+        },
+        "description": "一个空袭信号发生器，向末日飞艇发送空袭信号，让末日飞艇派出战斗机对目标地点投放100kg航弹。(↑→↓↓↓)",
+        "volume": "100 ml",
+        "weight": "460 g",
+        "price": 2500,
+        "price_postapoc": 2500,
+        "to_hit": -3,
+        "material": [
+            "steel"
+          ],
+        "symbol": "!",
+        "color": "red",
+        "explode_in_fire": false,
+        "explosion": {
+          "power": 114514
+        },
+        "use_action": {
+          "need_wielding": true,
+          "target": "AZ_AA_AIR_BAG_ACT",
+          "msg": "你激活了空袭信号发生器。快把它扔出去！你有30秒的时间！",
+          "target_timer": "30 seconds",
+          "active": true,
+          "menu_text": "激活空袭信号发生器",
+          "type": "transform"
+        },
+        "flags": [
+          "RADIO_MODABLE",
+          "RADIO_INVOKE_PROC",
+          "BOMB"
+        ],
+        "melee_damage": {
+          "bash": 4
+        }
+      },
+      {
+        "id": "AZ_AA_AIR_BAG_ACT",
+        "type": "TOOL",
+        "category": "weapons",
+        "name": {
+          "str": "空袭信号发生器(100kg航弹)",
+          "str_pl": "空袭信号发生器(100kg航弹)"
+        },
+        "description": "空袭信号发生器已经激活，末日飞艇的战斗机马上就会抵达。",
+        "volume": "100 ml",
+        "weight": "460 g",
+        "price": 2500,
+        "price_postapoc": 2500,
+        "to_hit": -3,
+        "material": [
+            "steel"
+          ],
+        "symbol": "!",
+        "color": "red",
+        "explode_in_fire": false,
+        "explosion": {
+          "power": 11451
+        },
+        "use_action": {
+          "type": "message",
+          "message": "你已经激活了信号发射器，快把它扔出去！",
+          "name": "激活空袭信号发生器"
+        },
+        "flags": [
+          "TRADER_AVOID",
+          "BOMB"
+        ],
+        "melee_damage": {
+          "bash": 4
+        },
+        "countdown_action": {
+          "type": "explosion",
+          "explosion": {
+            "power": 114514 
+          }
+        }
+      },
+      {
+        "id": "AZ_AA_AIR_BAG_2",
+        "type": "TOOL",
+        "category": "weapons",
+        "name": {
+          "str": "空袭信号发生器(100kg空爆弹)",
+          "str_pl": "空袭信号发生器(100kg空爆弹)"
+        },
+        "description": "一个空袭信号发生器，向末日飞艇发送空袭信号，让末日飞艇派出战斗机对目标地点投放100kg空爆弹。(↓↑→↓↓)",
+        "volume": "100 ml",
+        "weight": "460 g",
+        "price": 2500,
+        "price_postapoc": 2500,
+        "to_hit": -3,
+        "material": [
+            "steel"
+          ],
+        "symbol": "!",
+        "color": "red",
+        "explode_in_fire": false,
+        "explosion": {
+          "power": 2400,
+          "shrapnel": {
+            "casing_mass": 2170000,
+            "fragment_mass": 5
+          }
+        },
+        "use_action": {
+          "need_wielding": true,
+          "target": "AZ_AA_AIR_BAG_2_ACT",
+          "msg": "你激活了空袭信号发生器。快把它扔出去！你有30秒的时间！",
+          "target_timer": "30 seconds",
+          "active": true,
+          "menu_text": "激活空袭信号发生器",
+          "type": "transform"
+        },
+        "flags": [
+          "RADIO_MODABLE",
+          "RADIO_INVOKE_PROC",
+          "BOMB"
+        ],
+        "melee_damage": {
+          "bash": 4
+        }
+      },
+      {
+        "id": "AZ_AA_AIR_BAG_2_ACT",
+        "type": "TOOL",
+        "category": "weapons",
+        "name": {
+          "str": "空袭信号发生器(100kg空爆弹)",
+          "str_pl": "空袭信号发生器(100kg空爆弹)"
+        },
+        "description": "空袭信号发生器已经激活，末日飞艇的战斗机马上就会抵达。",
+        "volume": "100 ml",
+        "weight": "460 g",
+        "price": 2500,
+        "price_postapoc": 2500,
+        "to_hit": -3,
+        "material": [
+            "steel"
+          ],
+        "symbol": "!",
+        "color": "red",
+        "explode_in_fire": false,
+        "explosion": {
+          "power": 2400,
+          "shrapnel": {
+            "casing_mass": 2170000,
+            "fragment_mass": 5
+          }
+        },
+        "use_action": {
+          "type": "message",
+          "message": "你已经激活了信号发射器，快把它扔出去！",
+          "name": "激活空袭信号发生器"
+        },
+        "flags": [
+          "TRADER_AVOID",
+          "BOMB"
+        ],
+        "melee_damage": {
+          "bash": 4
+        },
+        "countdown_action": {
+          "type": "explosion",
+          "explosion": {
+            "power": 2400,
+            "shrapnel": {
+              "casing_mass": 2170000,
+              "fragment_mass": 5
+            }
+          }
+        }
+      }
+]

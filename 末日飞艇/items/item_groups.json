@@ -1,0 +1,176 @@
+[
+    {
+        "id": "AZ_AA_RECORD_GROUP",
+        "type":"item_group",
+        "items": [
+            { "item": "AZ_AA_RECORD", "count": 1 }
+        ]
+    },
+    {
+        "id": "AZ_AA_tickets",
+        "type": "item_group",
+        "items": [
+            { "item": "AZ_AA_ticket", "count": 20 , "prob": 100 },
+            { "item": "AZ_AA_ticket_back", "count": 20, "prob": 100 }
+        ]
+    },
+    {
+      "id": "SUS_evac_shelter_locker",
+      "type": "item_group",
+      "//": "SUS item groups are collections that contain a reasonable realistic distribution of items that might spawn in a given storage furniture.",
+      "//2": "Each locker contains by spec one jacket, one blanket, one gas mask, a flashlight, a whistle, a plastic bowl and utensils, a lighter, and two bottles of water.  Not every locker is fully stocked.",
+      "subtype": "collection",
+      "entries": [
+        { "item": "evac_pamphlet", "prob": 99 },
+        { "item": "jacket_evac", "prob": 75 },
+        { "item": "emer_blanket", "prob": 75 },
+        { "item": "mask_gas", "prob": 2 },
+        { "item": "flashlight", "prob": 50 },
+        { "item": "light_disposable_cell", "prob": 10 },
+        { "item": "lighter", "prob": 20, "charges": [ 60, 100 ] },
+        { "item": "whistle", "prob": 70 },
+        { "item": "water_clean", "count": [ 1, 2 ], "prob": 80 },
+        { "item": "protein_bar_evac", "count": [ 2, 3 ] },
+        { "item": "AZ_AA_ticket", "count": [ 1, 2 ] , "prob": 15 },
+        {
+          "collection": [
+            { "item": "plastic_spoon", "prob": 90 },
+            { "item": "plastic_knife", "prob": 90 },
+            { "item": "plastic_fork", "prob": 90 },
+            { "item": "bowl_plastic", "prob": 90 }
+          ],
+          "prob": 90
+        }
+      ]
+    },
+    {
+        "id":"AZ_AA_SPECIFIC",
+        "type":"item_group",
+        "//":"这个是为默认飞艇的特殊物品预留的，(＾－＾)V",
+        "items":[
+            
+        ]
+    },
+    {
+      "id":"AZ_AA_M_item_group_for_sell",
+      "type":"item_group",
+      "items":[
+      { "group": "EXODII_CBM_Store_Tier1", "prob": 10, "count": [ 0, 1 ] },
+      { "group": "EXODII_CBM_Store_Tier2", "prob": 10, "count": [ 0, 1 ] },
+      { "group": "EXODII_CBM_Store_Tier3", "prob": 10, "count": [ 0, 1 ] },
+      { "group": "EXODII_CBM_Store_Tier4", "prob": 10, "count": [ 0, 1 ] },
+      { "group": "drugs_analgesic",  "count": [ 30, 50 ] },
+      { "group": "drugs_heal_simple", "count": [ 50, 70 ] },
+      { "group": "drugs_pharmacy", "count": [ 30, 50 ] },
+      { "group": "drugs_rare", "count": [ 10, 20 ] },
+      { "group": "drugs_soldier", "count": [ 5, 10 ] },
+      { "item": "FMCNote", "count": 50 },
+      { "item": "AZ_AA_ticket", "count": 10  },
+      { "item": "AZ_AA_ticket_back", "count": 10 }
+      ]
+    },
+    {
+      "id": "AZ_AA_M_item_group",
+      "type": "item_group",
+      "items": [
+        { "group": "AZ_AA_M_item_group_for_sell",  "count": 10 }
+      ]
+    },
+    {
+        "id": "AZ_AA_G_item_group_for_sell",
+        "type": "item_group",
+        "items": [
+            { "group": "gunmod_common",  "count": [ 5, 10 ]},
+            { "group": "gunmod_rare",  "count": [ 1, 5 ]},
+            { "group": "gunmod_milspec",  "count": [ 5, 10 ]},
+            { "group": "sights_rifle",  "count": [ 5, 10 ]},
+            { "group": "guns_pistol_common",  "count": [ 5, 10 ]},
+            { "group": "guns_pistol_rare",  "count": [ 1, 5 ]},
+            { "group": "guns_pistol_milspec",  "count": [ 5, 10 ]},
+            { "group": "guns_pistol_obscure", "count": [ 1, 5 ]},
+            { "group": "guns_smg_rare",  "count": [ 1, 5 ]},
+            { "group": "guns_smg_milspec",  "count": [ 5, 10 ]},
+            { "group": "guns_rifle_common", "count": [ 5, 10 ]},
+            { "group": "guns_rifle_rare",  "count": [ 1, 5 ]},
+            { "group": "guns_rifle_milspec", "count": [ 5, 10 ]},
+            { "group": "guns_rifle_obscure",  "count": [ 1, 5 ]},
+            { "group": "guns_shotgun_common", "count": [ 5, 10 ]},
+            { "group": "guns_shotgun_rare",  "count": [ 1, 5 ]},
+            { "group": "ammo_pistol_common",  "count": [ 50, 70 ]},
+            { "group": "ammo_pistol_rare",  "count": [ 10, 30 ]},
+            { "group": "ammo_pistol_milspec",  "count": [ 50, 70 ]},
+            { "group": "ammo_pistol_obscure",  "count": [ 10, 30 ]},
+            { "group": "ammo_rifle_common",  "count": [ 50, 70 ]},
+            { "group": "ammo_rifle_rare",  "count": [ 10, 30 ]},
+            { "group": "ammo_rifle_milspec",  "count": 100 },
+            { "group": "ammo_rifle_obscure",  "count": [ 10, 30 ]},
+            { "group": "ammo_shotgun_common",  "count": [ 30, 50 ]},
+            { "group": "ammo_shotgun_rare",  "count": [ 10, 30 ]},
+            { "group": "ammo_shotgun_milspec",  "count": [ 30, 50 ]},
+            { "item": "FMCNote", "count": 100 },
+            { "item": "AZ_AA_ticket", "count": 10  },
+            { "item": "AZ_AA_ticket_back", "count": 10 }
+        ]
+    },
+    {
+      "id": "AZ_AA_G_item_group",
+      "type": "item_group",
+      "items": [
+        { "group": "AZ_AA_G_item_group_for_sell",  "count": 5 }
+      ]
+    },
+    {
+      "id": "AZ_AA_F_item_group_for_sell",
+      "type": "item_group",
+      "items": [
+        { "group": "preserved_food",  "count": 15 },
+        { "group": "dry_goods",  "count": 15 },
+        { "group": "foodintincan",  "count": 15 },
+        { "group": "cannedfood",  "count": 15 },
+        { "group": "foodintincan",  "count": 15 },
+        { "group": "pasta",  "count": 15 },
+        { "group": "fresh_produce",  "count": 30 },
+        { "group": "softdrinks_bottled",  "count": 15 },
+        { "group": "candy_chocolate",  "count": 15 },
+        { "group": "snacks",  "count": 15 },
+        { "group": "sandwiches",  "count": 15 },
+        { "group": "dessert",  "count": 15 },
+        { "group": "barbecue",  "count": 15 },
+        { "group": "fast_food",  "count": 15 },
+        { "item": "FMCNote", "count": 100 },
+        { "item": "AZ_AA_ticket", "count": 10  },
+        { "item": "AZ_AA_ticket_back", "count": 10 }
+      ]
+    },
+    {
+      "id": "AZ_AA_F_item_group",
+      "type": "item_group",
+      "items": [
+        { "group": "AZ_AA_F_item_group_for_sell", "count": 5 }
+      ]
+    },
+    {
+      "id": "AZ_AA_W_item_group_for_sell",
+      "type": "item_group",
+      "items": [
+        { "group": "swat_gear", "count": 5 },
+        { "group": "gear_survival", "count": 5 },
+        { "group": "fireman_gear", "count": 5 },
+        { "group": "civilian_body_armor", "count": 5 },
+        { "group": "military_ballistic_vest_light_pristine", "count": 5 },
+        { "group": "army_personal_locker", "count": 15 },
+        { "group": "military", "count": 10 },
+        { "group": "NC_EVAC_SHOPKEEP_misc", "prob": 20, "count": [0,1] },
+        { "item": "FMCNote", "count": 100 },
+        { "item": "AZ_AA_ticket", "count": 10  },
+        { "item": "AZ_AA_ticket_back", "count": 10 }
+      ]
+    },
+    {
+      "id": "AZ_AA_W_item_group",
+      "type": "item_group",
+      "items": [
+        { "group": "AZ_AA_W_item_group_for_sell", "count": 5 }
+      ]
+    }
+]

@@ -1,0 +1,415 @@
+[
+    {
+        "type": "mapgen",
+        "method": "json",
+        "update_mapgen_id": "AZ_AA_U_update",
+        "object": {
+          "rows": [
+            "                        ",
+            "                        ",
+            "                        ",
+            "                        ",
+            "                        ",
+            "                        ",
+            "########################",
+            "#D.L.!#D.L.!#D.L.!#D.L.!",
+            "#X...!#X...!#X...!#X...!",
+            "#YZ...#YZ...#YZ...#YZ...",
+            "#####+#####+#####+#####+",
+            ".L....L....L....L....L..",
+            ".L....L....L....L....L..",
+            "#####+#####+#####+#####+",
+            "#YZ...#YZ...#YZ...#YZ...",
+            "#X...!#X...!#X...!#X.W.!",
+            "#D.L.!#D.L.!#D.L.!#D.L.!",
+            "########################",
+            "                        ",
+            "                        ",
+            "                        ",
+            "                        ",
+            "                        ",
+            "                        "
+          ],
+          "terrain": {
+            " ": "t_open_air",
+            "Z": "t_metal_floor",
+            "W": "t_AZ_AA_warp_point",
+            "D": "t_metal_floor",
+            ".": "t_metal_floor",
+            "#": "t_wall_metal",
+            "!": "t_metal_floor",
+            "Y": "t_metal_floor",
+            "N": "t_door_metal_locked",
+            "L": "t_metal_floor_olight",
+            "+": "t_door_metal_o",
+            "X": "t_metal_floor"
+          },
+          "flags": [ "ERASE_ALL_BEFORE_PLACING_TERRAIN" ],
+          "place_npcs": [ 
+            { "class": "NPC_AZ_AA_Passenger", "x": 4, "y": 11 },
+            { "class": "NPC_AZ_AA_Passenger", "x": 7, "y": 8 },
+            { "class": "NPC_AZ_AA_Passenger", "x": 15, "y": 15 }
+        ],
+          "furniture": {
+            "!": "f_bed",
+            "D": "f_fridge",
+            "Z": "f_stool",
+            "X": "f_locker",
+            "Y": "f_table"
+          }
+        }
+      },
+      {
+        "type": "mapgen",
+        "method": "json",
+        "update_mapgen_id": "AZ_AA_T_update",
+        "object": {
+          "rows": [
+            "          #..#          ",
+            "          #..#          ",
+            "###########++###########",
+            "#BB.L...G.f..f.G...L.{{#",
+            "#.......G......G.......#",
+            "#.......G......G.......#",
+            "#.......G..LL..G.......#",
+            "#GGGGGGGG......GGGGGGGG#",
+            "#......................#",
+            "#C.......}}WF}D.......C#",
+            "#C....................C#",
+            "+....L....CTTC....L....X",
+            "+....L....CTTC....L....X",
+            "#C.........CC.........C#",
+            "#C....................C#",
+            "#......................#",
+            "#GGGGGGGG......GGGGGGGG#",
+            "#.......G..LL..G.......#",
+            "#.......G......G.......#",
+            "#.......G......G.......#",
+            "#12.L...G.f..f.G...L.YY#",
+            "###########XX###########",
+            "                        ",
+            "                        "
+          ],
+          "terrain": {
+            " ": "t_open_air",
+            "G": "t_ballistic_glass",
+            ".": "t_metal_floor",
+            "#": "t_wall_metal",
+            "B": "t_metal_floor",
+            "{": "t_metal_floor",
+            "}": "t_metal_floor",
+            "Y": "t_metal_floor",
+            "1": "t_metal_floor",
+            "W": "t_metal_floor",
+            "F": "t_metal_floor",
+            "2": "t_metal_floor",
+            "D": "t_metal_floor",
+            "f": "t_metal_floor",
+            "T": "t_metal_floor",
+            "C": "t_metal_floor",
+            "L": "t_metal_floor_olight",
+            "X": "t_door_metal_locked",
+            "+": "t_door_metal_o"
+          },
+          "flags": [ "ERASE_ALL_BEFORE_PLACING_TERRAIN" ],
+          "place_npcs": [ 
+            { "class": "NPC_AZ_AA_F", "x": 5, "y": 5 },
+            { "class": "NPC_AZ_AA_G", "x": 18, "y": 5 },
+            { "class": "NPC_AZ_AA_M", "x": 5, "y": 18 },
+            { "class": "NPC_AZ_AA_W", "x": 18, "y": 18 },
+            { "class": "NPC_AZ_AA_Passenger", "x": 11, "y": 13 },
+            { "class": "NPC_AZ_AA_Passenger", "x": 18, "y": 13 },
+            { "class": "NPC_AZ_AA_NOMAL_BUY", "x": 10, "y": 11 }
+        ],
+          "furniture": {
+            "B": "f_fridge",
+            "Y": "f_wardrobe",
+            "{": "f_gunsafe_c",
+            "1": "f_autodoc",
+            "2": "f_autodoc_couch",
+            "T": "f_coffee_table",
+            "C": "f_bench",
+            "}": "f_counter",
+            "F": "f_oven",
+            "W": "f_sink",
+            "D": "f_active_backup_generator",
+            "f": "f_indoor_plant"
+          }
+        }
+      },
+      {
+        "type": "mapgen",
+        "method": "json",
+        "update_mapgen_id": "AZ_AA_U_roof_update",
+        "object": {
+          "rows": [
+            "                        ",
+            "                        ",
+            "                        ",
+            "                        ",
+            "                        ",
+            "                        ",
+            "........................",
+            "........................",
+            "........................",
+            "........................",
+            "........................",
+            "........................",
+            "........................",
+            "........................",
+            "........................",
+            "........................",
+            "........................",
+            "........................",
+            "                        ",
+            "                        ",
+            "                        ",
+            "                        ",
+            "                        ",
+            "                        "
+          ],
+          "terrain": {
+            " ": "t_open_air",
+            ".": "t_metal_flat_roof"
+          },
+          "flags": [ "ERASE_ALL_BEFORE_PLACING_TERRAIN" ],
+          "palettes": [ "roof_palette" ]
+        }
+      },
+      {
+        "type": "mapgen",
+        "method": "json",
+        "update_mapgen_id": "AZ_AA_T_roof_update",
+        "object": {
+          "rows": [
+            "                        ",
+            "                        ",
+            "........................",
+            "........................",
+            "........................",
+            "........................",
+            "........................",
+            "........................",
+            "........................",
+            "........................",
+            "........................",
+            "........................",
+            "........................",
+            "........................",
+            "........................",
+            "........................",
+            "........................",
+            "........................",
+            "........................",
+            "........................",
+            "........................",
+            "........................",
+            "                        ",
+            "                        "
+          ],
+          "terrain": {
+            " ": "t_open_air",
+            ".": "t_metal_flat_roof"
+          },
+          "flags": [ "ERASE_ALL_BEFORE_PLACING_TERRAIN" ],
+          "palettes": [ "roof_palette" ]
+        }
+      },
+      {
+        "type": "mapgen",
+        "method": "json",
+        "update_mapgen_id": "AZ_AA_F_update",
+        "object": {
+          "rows": [
+            "########################",
+            "#L....................L#",
+            "#.111111.222222.333333.#",
+            "#.111111.222222.333333.#",
+            "#......................#",
+            "#.111111.222222.333333.#",
+            "#.111111.222222.333333.#",
+            "#.......L......L.......#",
+            "#.111111.222222.333333.#",
+            "#.111111.222222.333333.#",
+            "#L....................L#",
+            "N....D.D...XXX}........+",
+            "N.....DDD..XXX}........+",
+            "#L....................L#",
+            "#.444444.555555.666666.#",
+            "#.444444.555555.666666.#",
+            "#.......L......L.......#",
+            "#.444444.555555.666666.#",
+            "#.444444.555555.666666.#",
+            "#......................#",
+            "#.444444.555555.666666.#",
+            "#.444444.555555.666666.#",
+            "#L....................L#",
+            "########################"
+          ],
+          "terrain": {
+            " ": "t_open_air",
+            "1": "t_AZ_AA_dirtmound1",
+            "2": "t_AZ_AA_dirtmound2",
+            "3": "t_AZ_AA_dirtmound3",
+            "4": "t_AZ_AA_dirtmound4",
+            "5": "t_AZ_AA_dirtmound5",
+            "6": "t_AZ_AA_dirtmound6",
+            ".": "t_metal_floor_no_roof",
+            "}": "t_metal_floor",
+            "D": "t_metal_floor_no_roof",
+            "X": "t_metal_floor",
+            "#": "t_wall_metal",
+            "N": "t_door_metal_locked",
+            "L": "t_metal_floor_olight",
+            "+": "t_door_metal_o"
+          },
+          "flags": [ "ERASE_ALL_BEFORE_PLACING_TERRAIN" ],
+          "place_npcs":[
+            { "class": "NPC_AZ_AA_FARMER", "x": 13, "y": 11 }
+          ],
+          "furniture": {
+            "D": "f_hay",
+            "}": "f_counter"
+          }
+        }
+      },
+      {
+        "type": "mapgen",
+        "method": "json",
+        "update_mapgen_id": "AZ_AA_O_update",
+        "object": {
+          "rows": [
+            "########################",
+            "#L...bbbb..........B..L#",
+            "#...bb..B..B...B.BBB.b.#",
+            "#bb.B......BBB...BBB...#",
+            "#.B...B.B.....B...BB.B.#",
+            "#...bb..########..bb...#",
+            "#.b.....#      #....b..#",
+            "#...B..L#      #L.bbbb.#",
+            "#.B.....#      #.....b.#",
+            "#.......#      #.......#",
+            "#L......!!!!!!!!......L#",
+            "#......................#",
+            "#......................#",
+            "#L....................L#",
+            "#l.....................#",
+            "#l................XXXXX#",
+            "#l......L......L..X....#",
+            "#l................X....#",
+            "#l................X....#",
+            "#l................XXXXX#",
+            "#......................#",
+            "#......................#",
+            "#L..WWW.........R.....L#",
+            "###########++###########"
+          ],
+          "terrain": {
+            " ": "t_open_air",
+            ".": "t_metal_floor",
+            "#": "t_wall_metal",
+            "L": "t_metal_floor_olight",
+            "+": "t_door_metal_o",
+            "!": "t_thconc_warning",
+            "l": "t_metal_floor",
+            "B": "t_metal_floor",
+            "b": "t_metal_floor",
+            "W": "t_metal_floor",
+            "R": "t_water_pump",
+            "X": "t_metal_floor"
+          },
+          "flags": [ "ERASE_ALL_BEFORE_PLACING_TERRAIN" ],
+          "place_npcs":[
+            { "class": "NPC_AZ_AA_OUTER", "x": 7, "y": 19 },
+            { "class": "NPC_AZ_AA_OUTER", "x": 13, "y": 17 },
+            { "class": "NPC_AZ_AA_OUTER", "x": 5, "y": 12 },
+            { "class": "NPC_AZ_AA_FEAT", "x": 9, "y": 13 },
+            { "class": "NPC_AZ_AA_OUTER_Mission", "x": 21, "y": 17 }
+          ],
+          "furniture": {
+            "X": "f_counter",
+            "l": "f_locker",
+            "B": "f_crate_o",
+            "b": "f_crate_c",
+            "W": "f_workbench"
+          }
+        }
+      },
+      {
+        "type": "mapgen",
+        "method": "json",
+        "update_mapgen_id": "AZ_AA_O_roof_update",
+        "object": {
+          "rows": [
+            "........................",
+            "........................",
+            "........................",
+            "........................",
+            "........................",
+            "........................",
+            "........................",
+            "........................",
+            "........................",
+            "........................",
+            "........................",
+            "........................",
+            "........................",
+            "........................",
+            "........................",
+            "........................",
+            "........................",
+            "........................",
+            "........................",
+            "........................",
+            "........................",
+            "........................",
+            "........................",
+            "........................"
+          ],
+          "terrain": {
+            " ": "t_open_air",
+            ".": "t_metal_flat_roof"
+          },
+          "flags": [ "ERASE_ALL_BEFORE_PLACING_TERRAIN" ],
+          "palettes": [ "roof_palette" ]
+        }
+      },
+      {
+        "type": "mapgen",
+        "method": "json",
+        "update_mapgen_id": "AZ_AA_AIR_update",
+        "object": {
+          "rows": [
+            "                        ",
+            "                        ",
+            "                        ",
+            "                        ",
+            "                        ",
+            "                        ",
+            "                        ",
+            "                        ",
+            "                        ",
+            "                        ",
+            "                        ",
+            "                        ",
+            "                        ",
+            "                        ",
+            "                        ",
+            "                        ",
+            "                        ",
+            "                        ",
+            "                        ",
+            "                        ",
+            "                        ",
+            "                        ",
+            "                        ",
+            "                        "
+          ],
+          "terrain": {
+            " ": "t_open_air"
+          },
+          "flags": [ "ERASE_ALL_BEFORE_PLACING_TERRAIN" ],
+          "palettes": [ "roof_palette" ]
+        }
+      }
+]

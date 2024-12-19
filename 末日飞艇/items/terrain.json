@@ -1,0 +1,206 @@
+[
+    {
+        "type": "terrain",
+        "id": "t_AZ_AA_warp_point",
+        "name": "金属舷梯",
+        "looks_like": "t_metal_floor",
+        "description": "用于连接短距离间隙的金属舷梯。足够坚固，可以用作地板，但不足以支撑额外的地板。",
+        "symbol": ".",
+        "color": "light_cyan",
+        "connect_groups": "METALFLOOR",
+        "connects_to": "METALFLOOR",
+        "move_cost": 2,
+        "flags": [
+          "TRANSPARENT",
+          "FLAT",
+          "ROAD"
+        ],
+        "bash": {
+          "sound": "thump",
+          "ter_set": "t_null",
+          "str_min": 200,
+          "str_max": 500,
+          "str_min_supported": 200,
+          "items": [
+            {
+              "item": "steel_lump",
+              "count": [
+                1,
+                4
+              ]
+            },
+            {
+              "item": "steel_chunk",
+              "count": [
+                3,
+                12
+              ]
+            },
+            {
+              "item": "scrap",
+              "count": [
+                9,
+                36
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "type": "terrain",
+        "id": "t_AZ_AA_dirtmound1",
+        "name": "未租用的土地",
+        "description": "一块被翻耕过的泥土地，不易穿行。这种地方非常适合播种。但是你并未租用这片土地，不可以在上面种植作物。这属于一号农场",
+        "symbol": "#",
+        "color": "brown",
+        "connect_groups": "DIRTMOUND",
+        "connects_to": "DIRTMOUND",
+        "move_cost": 3,
+        "looks_like": "t_dirtmound",
+        "flags": [
+          "TRANSPARENT",
+          "DIGGABLE",
+          "MOUNTABLE",
+          "NOCOLLIDE",
+          "PLANTABLE"
+        ],
+        "bash": {
+          "sound": "thump",
+          "ter_set": "t_null",
+          "str_min": 50,
+          "str_max": 100,
+          "str_min_supported": 100
+        }
+      },
+      {
+        "type": "terrain",
+        "id": "t_AZ_AA_dirtmound2",
+        "name": "未租用的土地",
+        "description": "一块被翻耕过的泥土地，不易穿行。这种地方非常适合播种。但是你并未租用这片土地，不可以在上面种植作物。这属于二号农场",
+        "symbol": "#",
+        "color": "brown",
+        "connect_groups": "DIRTMOUND",
+        "connects_to": "DIRTMOUND",
+        "move_cost": 3,
+        "looks_like": "t_dirtmound",
+        "flags": [
+          "TRANSPARENT",
+          "DIGGABLE",
+          "MOUNTABLE",
+          "NOCOLLIDE",
+          "PLANTABLE"
+        ],
+        "bash": {
+          "sound": "thump",
+          "ter_set": "t_null",
+          "str_min": 50,
+          "str_max": 100,
+          "str_min_supported": 100
+        }
+      },
+      {
+        "type": "terrain",
+        "id": "t_AZ_AA_dirtmound3",
+        "name": "未租用的土地",
+        "description": "一块被翻耕过的泥土地，不易穿行。这种地方非常适合播种。但是你并未租用这片土地，不可以在上面种植作物。这属于三号农场",
+        "symbol": "#",
+        "color": "brown",
+        "connect_groups": "DIRTMOUND",
+        "connects_to": "DIRTMOUND",
+        "move_cost": 3,
+        "looks_like": "t_dirtmound",
+        "flags": [
+          "TRANSPARENT",
+          "DIGGABLE",
+          "MOUNTABLE",
+          "NOCOLLIDE",
+          "PLANTABLE"
+        ],
+        "bash": {
+          "sound": "thump",
+          "ter_set": "t_null",
+          "str_min": 50,
+          "str_max": 100,
+          "str_min_supported": 100
+        }
+      },
+      {
+        "type": "terrain",
+        "id": "t_AZ_AA_dirtmound4",
+        "name": "未租用的土地",
+        "description": "一块被翻耕过的泥土地，不易穿行。这种地方非常适合播种。但是你并未租用这片土地，不可以在上面种植作物。这属于四号农场",
+        "symbol": "#",
+        "color": "brown",
+        "connect_groups": "DIRTMOUND",
+        "connects_to": "DIRTMOUND",
+        "move_cost": 3,
+        "looks_like": "t_dirtmound",
+        "flags": [
+          "TRANSPARENT",
+          "DIGGABLE",
+          "MOUNTABLE",
+          "NOCOLLIDE",
+          "PLANTABLE"
+        ],
+        "bash": {
+          "sound": "thump",
+          "ter_set": "t_null",
+          "str_min": 50,
+          "str_max": 100,
+          "str_min_supported": 100
+        }
+      },
+      {
+        "type": "terrain",
+        "id": "t_AZ_AA_dirtmound5",
+        "name": "未租用的土地",
+        "description": "一块被翻耕过的泥土地，不易穿行。这种地方非常适合播种。但是你并未租用这片土地，不可以在上面种植作物。这属于五号农场",
+        "symbol": "#",
+        "color": "brown",
+        "connect_groups": "DIRTMOUND",
+        "connects_to": "DIRTMOUND",
+        "move_cost": 3,
+        "looks_like": "t_dirtmound",
+        "flags": [
+          "TRANSPARENT",
+          "DIGGABLE",
+          "MOUNTABLE",
+          "NOCOLLIDE",
+          "PLANTABLE"
+        ],
+        "bash": {
+          "sound": "thump",
+          "ter_set": "t_null",
+          "str_min": 50,
+          "str_max": 100,
+          "str_min_supported": 100
+        }
+      },
+      {
+        "type": "terrain",
+        "id": "t_AZ_AA_dirtmound6",
+        "name": "未租用的土地",
+        "description": "一块被翻耕过的泥土地，不易穿行。这种地方非常适合播种。但是你并未租用这片土地，不可以在上面种植作物。这属于六号农场",
+        "symbol": "#",
+        "color": "brown",
+        "connect_groups": "DIRTMOUND",
+        "connects_to": "DIRTMOUND",
+        "move_cost": 3,
+        "looks_like": "t_dirtmound",
+        "flags": [
+          "TRANSPARENT",
+          "DIGGABLE",
+          "MOUNTABLE",
+          "NOCOLLIDE",
+          "PLANTABLE"
+        ],
+        "bash": {
+          "sound": "thump",
+          "ter_set": "t_null",
+          "str_min": 50,
+          "str_max": 100,
+          "str_min_supported": 100
+        }
+      }
+
+]

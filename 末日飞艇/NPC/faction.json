@@ -1,0 +1,35 @@
+[
+    {
+        "type": "faction",
+        "id": "AZ_AA_faction",
+        "name": "末日飞艇",
+        "likes_u": 30,
+        "respects_u": 30,
+        "trusts_u": 30,
+        "known_by_u": false,
+        "size": 1000,
+        "power": 1000,
+        "food_supply": 1152000,
+        "wealth": 500000000,
+        "currency": "FMCNote",
+        "description": "末日飞艇的乘员及所有者，他们很乐意与地面上的幸存者交易，甚至接受商会币来作为一般等价物。",
+        "epilogues": [
+            { "power_min": 0, "power_max": 149, "id": "epilogue_faction_AZ_0" },
+            { "power_min": 150, "id": "epilogue_faction_AZ_150" }
+          ]
+    },
+    {
+        "type": "snippet",
+        "category": "epilogue_factions",
+        "text": [
+            {
+                "id": "epilogue_faction_AZ_0",
+                "text": "末日飞艇最终还是没能逃脱末日的命运，它和它的乘员们一起，消失在了末日的尘埃中。"
+            },
+            {
+                "id": "epilogue_faction_AZ_150",
+                "text": "尽管最终末日飞艇不再飞翔，但是它的停留地成为了一座坚固的堡垒，它和它的乘员们一起，成为了末日中的为数不多的避风港。"
+            }
+        ]
+    }
+]

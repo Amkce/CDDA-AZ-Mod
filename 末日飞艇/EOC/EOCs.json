@@ -1,0 +1,161 @@
+[
+{
+    "type": "effect_on_condition",
+    "id": "EOC_AZ_AA_warp",
+    "//": "虽然说一秒就到，但是不会让你度过你百万年的（确信）",
+    "condition": {
+        "and": [
+          { "not": "u_driving" },
+          { "not": { "u_has_var": "u_have_warp","value": "yes"} }
+        ]
+      },
+    "effect": [
+      { "u_location_variable": { "global_val": "AZ_AA_original_loc" } },
+      {
+        "u_location_variable": { "global_val": "AZ_AA_loc_for_mission_1" },
+        "target_params": {
+          "om_terrain": "field",
+          "om_terrain_match_type": "CONTAINS",
+          "search_range": 40,
+          "min_distance": 10,
+          "z": 0,
+          "random": true
+        }
+      },
+      {
+        "u_location_variable": { "global_val": "AZ_AA_loc_for_mission_2" },
+        "target_params": {
+          "om_terrain": "field",
+          "om_terrain_match_type": "CONTAINS",
+          "search_range": 40,
+          "min_distance": 10,
+          "z": 0,
+          "random": true
+        }
+      },
+      {
+        "u_location_variable": { "global_val": "AZ_AA_loc_for_mission_3" },
+        "target_params": {
+          "om_terrain": "field",
+          "om_terrain_match_type": "CONTAINS",
+          "search_range": 40,
+          "min_distance": 10,
+          "z": 0,
+          "random": true
+        }
+      },
+      {
+        "u_location_variable": { "global_val": "AZ_AA_loc_for_mission_4" },
+        "target_params": {
+          "om_terrain": "house",
+          "om_terrain_match_type": "CONTAINS",
+          "search_range": 40,
+          "min_distance": 10,
+          "z": 0,
+          "random": true
+        }
+      },
+      {
+        "u_location_variable": { "global_val": "AZ_AA_loc_for_mission_5" },
+        "target_params": {
+          "om_terrain": "field",
+          "om_terrain_match_type": "CONTAINS",
+          "search_range": 40,
+          "min_distance": 10,
+          "z": 0,
+          "random": true
+        }
+      },
+      {
+        "u_location_variable": { "global_val": "AZ_AA_loc_for_mission_6" },
+        "target_params": {
+          "om_terrain": "field",
+          "om_terrain_match_type": "CONTAINS",
+          "search_range": 40,
+          "min_distance": 10,
+          "z": 0,
+          "random": true
+        }
+      },
+      {
+        "u_location_variable": { "global_val": "AZ_AA_loc_for_mission_7" },
+        "target_params": {
+          "om_terrain": "radio_tower_top",
+          "om_terrain_match_type": "CONTAINS",
+          "search_range": 40,
+          "min_distance": 10,
+          "z": 6,
+          "random": true
+        }
+      },
+      {               
+        "u_location_variable": { "global_val": "AZ_AA_TP" },
+        "target_params": { "om_terrain": "AZ_AA_U", "search_range": 5000, "z": 7 },
+        "terrain": "t_AZ_AA_warp_point",
+        "target_max_radius": 30,
+        "min_radius": 0,
+        "max_radius": 0
+      },
+      {
+          "u_add_var": "u_have_warp", "value": "yes" 
+      },
+      {
+        "location_variable_adjust":{ "global_val": "AZ_AA_TP" },
+        "x_adjust":  1,
+        "y_adjust":  1
+      },
+      { 
+        "u_teleport": { "global_val": "AZ_AA_TP" }, 
+        "fail_message": "糟糕！看起来接送机出问题了。（不退机票）" ,
+        "success_message": "欢迎来到末日飞艇"
+      }
+    ],
+    "false_effect": { "u_message": "你已经在末日飞艇上了，不需要再坐一次了。（当然，还是不退机票的）"}
+  },
+  {
+    "type":"effect_on_condition",
+    "id": "EOC_AZ_AA_warp_back",
+    "effect": [
+      { "u_location_variable": { "global_val": "AZ_AA_U_loc" } },
+      { "u_teleport": { "global_val": "AZ_AA_original_loc" } },
+      { "u_message": "又一次回到地狱..." },
+      { "u_add_var": "u_have_warp", "value": "no" }
+        
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_AZ_AA_updata",
+    "effect": [
+      {
+        "mapgen_update": "AZ_AA_U_update",
+        "om_terrain": "AZ_AA_U"
+      },
+      {
+        "mapgen_update": "AZ_AA_F_update",
+        "om_terrain": "AZ_AA_F"
+      },
+      {
+        "mapgen_update": "AZ_AA_O_update",
+        "om_terrain": "AZ_AA_O"
+      },
+      {
+        "mapgen_update": "AZ_AA_T_update",
+        "om_terrain": "AZ_AA_T"
+      },
+      {
+        "mapgen_update": "AZ_AA_O_roof_update",
+        "om_terrain": "AZ_AA_O_roof"
+      },
+      {
+        "mapgen_update": "AZ_AA_U_roof_update",
+        "om_terrain": "AZ_AA_U_roof"
+      },
+      {
+        "mapgen_update": "AZ_AA_T_roof_update",
+        "om_terrain": "AZ_AA_T_roof"
+      },
+      { "u_message": "地图更新完成." }
+    ]
+  }
+]

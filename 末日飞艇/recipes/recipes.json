@@ -1,0 +1,50 @@
+[
+    {
+        "type": "recipe",
+        "activity_level": "MODERATE_EXERCISE",
+        "result": "AZ_AA_ticket",
+        "category": "CC_OTHER",
+        "subcategory": "CSC_OTHER_TOOLS",
+        "skill_used": "fabrication",
+        "time": "30 m",
+        "reversible": {
+          "time": "1 s"
+        },
+        "autolearn": true,
+        "components": [
+          [
+            [
+                "paper",
+                1
+            ]
+          ],
+          [
+            [
+                "steel_chunk",
+                1
+            ]
+          ]
+        ]
+      },
+      {
+        "type": "recipe",
+        "activity_level": "MODERATE_EXERCISE",
+        "result": "AZ_AA_Updataitem",
+        "category": "CC_OTHER",
+        "subcategory": "CSC_OTHER_TOOLS",
+        "skill_used": "fabrication",
+        "time": "1 s",
+        "reversible": {
+          "time": "1 s"
+        },
+        "autolearn": true,
+        "components": [
+          [
+            [
+                "paper",
+                1
+            ]
+          ]
+        ]
+      }
+]

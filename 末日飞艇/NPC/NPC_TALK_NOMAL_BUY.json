@@ -1,0 +1,69 @@
+[
+    {
+        "type": "talk_topic",
+        "id": "TALK_AZ_AA_NOMAL_BUY",
+        "dynamic_line": "你好，我这里提供标准收购服务。你有什么东西要卖吗？",
+        "responses": [
+            { "text": "你们都收购什么？。", "topic": "TALK_AZ_AA_NOMAL_BUY_1" },
+            { "text": "我之后在来吧。", "topic": "TALK_DONE" }
+        ]
+    },
+    {
+        "type": "talk_topic",
+        "id": "TALK_AZ_AA_NOMAL_BUY_1",
+        "dynamic_line": "[他递给你了一张收购表]，目前来说，我们需要炭，面粉，果干，肉干以及一些金属。不过金属给的价格会比较低。\n\n[100面粉=5商会币]\n[10肉干=10商会币]\n[10000木炭=6商会币]\n[10果干=5商会币]\n[10钢锭=1商会币]",
+        "responses": [
+            {
+                "text": "[出售100面粉]",
+                "topic": "TALK_AZ_AA_NOMAL_BUY_1",
+                "condition": { "u_has_items": { "item": "flour", "count": 100 } },
+                "effect": 
+                    [
+                        { "u_consume_item": "flour", "count": 100, "popup": true },
+                        { "u_spawn_item": "FMCNote", "count": 5 }
+                    ]
+            },
+            {
+                "text": "[出售10肉干]",
+                "topic": "TALK_AZ_AA_NOMAL_BUY_1",
+                "condition": { "u_has_items": { "item": "jerky", "count": 10 } },
+                "effect": 
+                    [
+                        { "u_consume_item": "jerky", "count": 10, "popup": true },
+                        { "u_spawn_item": "FMCNote", "count": 10 }
+                    ]
+            },
+            {
+                "text": "[出售10000木炭]",
+                "topic": "TALK_AZ_AA_NOMAL_BUY_1",
+                "condition": { "u_has_items": { "item": "charcoal", "count": 10000 } },
+                "effect": 
+                    [
+                        { "u_consume_item": "charcoal", "count": 10000, "popup": true },
+                        { "u_spawn_item": "FMCNote", "count": 6 }
+                    ]
+            },
+            {
+                "text": "[出售10果干]",
+                "topic": "TALK_AZ_AA_NOMAL_BUY_1",
+                "condition": { "u_has_items": { "item": "dry_fruit", "count": 10 } },
+                "effect": 
+                    [
+                        { "u_consume_item": "dry_fruit", "count": 10, "popup": true },
+                        { "u_spawn_item": "FMCNote", "count": 5 }
+                    ]
+            },
+            {
+                "text": "[出售10钢锭]",
+                "topic": "TALK_AZ_AA_NOMAL_BUY_1",
+                "condition": { "u_has_items": { "item": "steel_lump", "count": 10 } },
+                "effect": 
+                    [
+                        { "u_consume_item": "steel_lump", "count": 10, "popup": true },
+                        { "u_spawn_item": "FMCNote", "count": 1 }
+                    ]
+            },
+            { "text": "我之后在来吧。", "topic": "TALK_DONE" }
+        ]
+    }
+]

@@ -1,0 +1,200 @@
+[
+    {
+    "id": "AZ_AA_ticket",
+    "type": "TOOL" ,
+    "name": {
+        "str_sp": "末日飞艇机票"
+      },
+    "description": "严格来说这并非传统意义上的机票，而是一个小型的信号发射器，可以让末日飞艇的接送机找到你的位置。",
+    "volume": "100 ml",
+    "weight": "50 g",
+    "material": [
+        "steel"
+      ],
+    "symbol": "=",
+    "flags": [
+        "SINGLE_USE"
+      ],
+    "color": "red",
+    "price_postapoc": 2500,
+    "use_action": {
+        "type": "effect_on_conditions",
+        "description": "接送机马上就抵达，它会带你到达末日飞艇！",
+        "effect_on_conditions": [
+          "EOC_AZ_AA_warp"
+        ]
+      }
+    },
+    {
+        "id": "AZ_AA_ticket_back",
+        "type": "TOOL" ,
+        "name": {
+            "str_sp": "末日飞艇返程机票"
+          },
+        "description": "一张带有防伪标识的机票，可以让接送机将你送回之前的位置",
+        "volume": "10 ml",
+        "weight": "5 g",
+        "material": [
+            "paper"
+          ],
+        "symbol": "=",
+        "flags": [
+            "SINGLE_USE"
+          ],
+        "color": "red",
+        "price_postapoc": 2500,
+        "use_action": {
+            "type": "effect_on_conditions",
+            "description": "接送机马上就出发，它会带你回到你来的地方！",
+            "effect_on_conditions": [
+              "EOC_AZ_AA_warp_back"
+            ]
+        }
+    },
+    {
+      "id": "AZ_AA_FEAT",
+      "type": "GENERIC",
+      "category": "currency",
+      "name": {
+          "str_sp": "末日飞艇功勋奖章"
+        },
+      "description": "一枚镀金的奖章，证明你所做的贡献。你也可以去兑换一些物品",
+      "volume": "5 ml",
+      "weight": "10 g",
+      "material": [
+          "steel",
+          "gold"
+        ],
+      "symbol": "o",
+      "color": "yellow",
+      "price_postapoc": 0
+    },
+    {
+      "id": "AZ_AA_RECORD",
+      "type": "GENERIC",
+      "name": {
+          "str_sp": "记录仪"
+        },
+      "category": "other",
+      "description": "一个记录仪，可以记录一些信息。看起来它的主人已经不在了。",
+      "volume": "50 ml",
+      "weight": "100 g",
+      "material": [
+          "steel"
+        ],
+      "symbol": "=",
+      "color": "red",
+      "price_postapoc": 0
+    },
+    {
+        "id": "AZ_AA_TEST_NPC1",
+        "type": "TOOL" ,
+        "name": {
+            "str": "测试用例NPCM"
+          },
+        "description": "欸？出BUG了，请联系我",
+        "volume": "10 ml",
+        "weight": "5 g",
+        "material": [
+            "paper"
+          ],
+        "symbol": "=",
+        "flags": [
+          ],
+        "color": "red",
+        "use_action": {
+            "type": "place_npc",
+            "npc_class_id": "NPC_AZ_AA_M"
+          }
+    },
+    {
+        "id": "AZ_AA_TEST_NPC2",
+        "type": "TOOL" ,
+        "name": {
+            "str": "测试用例NPCW"
+          },
+        "description": "欸？出BUG了，请联系我",
+        "volume": "10 ml",
+        "weight": "5 g",
+        "material": [
+            "paper"
+          ],
+        "symbol": "=",
+        "flags": [
+          ],
+        "color": "red",
+        "use_action": {
+            "type": "place_npc",
+            "npc_class_id": "NPC_AZ_AA_W"
+          }
+    },
+    {
+        "id": "AZ_AA_TEST_NPC3",
+        "type": "TOOL" ,
+        "name": {
+            "str": "测试用例NPCG"
+          },
+        "description": "欸？出BUG了，请联系我",
+        "volume": "10 ml",
+        "weight": "5 g",
+        "material": [
+            "paper"
+          ],
+        "symbol": "=",
+        "flags": [
+          ],
+        "color": "red",
+        "use_action": {
+            "type": "place_npc",
+            "npc_class_id": "NPC_AZ_AA_G"
+          }
+    },
+    {
+        "id": "AZ_AA_TEST_NPC4",
+        "type": "TOOL" ,
+        "name": {
+            "str": "测试用例NPCF"
+          },
+        "description": "欸？出BUG了，请联系我",
+        "volume": "10 ml",
+        "weight": "5 g",
+        "material": [
+            "paper"
+          ],
+        "symbol": "=",
+        "flags": [
+          ],
+        "color": "red",
+        "use_action": {
+          "type": "effect_on_conditions",
+          "description": "杀死NPC",
+          "effect_on_conditions": [
+            "AZ_kill_NPC"
+          ]
+      }
+    },
+    {
+        "id": "AZ_AA_Updataitem",
+        "type": "TOOL" ,
+        "name": {
+            "str": "末日飞艇更新"
+          },
+        "description": "用于末日飞艇更新地图，一般是用于版本更新时使用，同时如果地图生成出BUG时也可以使用。但是尽量不要使用，否则可能会导致出一些奇奇怪怪的BUG，还有会丢失你在飞艇上的物品。\n\n使用步骤：\n1. 前往末日飞艇\n2. 使用调试-地图中的杀死NPC\n3. 使用本物品\n4. 在调试-游戏中打开成就",
+        "volume": "10 ml",
+        "weight": "5 g",
+        "material": [
+            "paper"
+          ],
+        "symbol": "=",
+        "flags": [
+          ],
+        "color": "red",
+        "use_action": {
+            "type": "effect_on_conditions",
+            "description": "更新末日飞艇",
+            "effect_on_conditions": [
+              "EOC_AZ_AA_updata"
+            ]
+        }
+    }
+]

@@ -1,0 +1,60 @@
+[
+    {
+        "type": "npc_class",
+        "id": "NPC_C_AZ_AA_OUTER",
+        "name": { "str": "外勤" },
+        "job_description": "我只想一个人待着",
+        "sells_belongings": false
+    },
+    {
+        "type": "npc",
+        "id": "NPC_AZ_AA_OUTER",
+        "name_suffix": "外勤",
+        "class": "NPC_C_AZ_AA_OUTER",
+        "attitude": 0,
+        "mission": 3,
+        "chat": "TALK_AZ_AA_OUTER"
+    },
+    {
+        "type": "npc_class",
+        "id": "NPC_C_AZ_AA_OUTER_Mission",
+        "name": { "str": "外勤管理人员" },
+        "job_description": "我负责外勤人员的任务分配",
+        "sells_belongings": false,
+        "bonus_str": 100,                                       
+        "bonus_dex": 100,                                                       
+        "bonus_int": 10,                                            
+        "bonus_per": 100,
+        "restock_interval": "1 days"
+    },
+    {
+        "type": "npc",
+        "id": "NPC_AZ_AA_OUTER_Mission",
+        "name_suffix": "外勤管理人员",
+        "class": "NPC_C_AZ_AA_OUTER_Mission",
+        "attitude": 0,
+        "mission": 3,
+        "name_unique": "恩尼斯泰菈",
+        "chat": "TALK_AZ_AA_OUTER_Mission"
+    },
+    {
+        "type": "npc_class",
+        "id": "NPC_C_AZ_AA_FEAT",
+        "name": { "str": "老兵" },
+        "job_description": "我会卖一些功勋",
+        "sells_belongings": false,
+        "bonus_str": 100,                                       
+        "bonus_dex": 100,                                                       
+        "bonus_int": 10,                                            
+        "bonus_per": 100
+    },
+    {
+        "type": "npc",
+        "id": "NPC_AZ_AA_FEAT",
+        "name_suffix": "老兵",
+        "class": "NPC_C_AZ_AA_FEAT",
+        "attitude": 0,
+        "mission": 3,
+        "chat": "TALK_AZ_AA_BUY_FEAT"
+    }
+]

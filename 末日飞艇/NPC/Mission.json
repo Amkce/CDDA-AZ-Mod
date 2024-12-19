@@ -1,0 +1,180 @@
+[
+    {
+        "id": "MISSION_AZ_AA_KILL_MONSTER",
+        "type": "mission_definition",
+        "name": { "str": "击杀指定目标位置的怪物" },
+        "goal": "MGOAL_KILL_MONSTERS",
+        "description": "我们的员工在搜索路线上发现了一些怪物，击杀它们并确保区域安全。",
+        "difficulty": 10,
+        "value": 25,
+        "start": {
+          "assign_mission_target": { "var": { "global_val": "AZ_AA_loc_for_mission_1" }},
+          "update_mapgen": {
+            "place_monster": [
+              { "group": "GROUP_AZ_AA_ZOMBIE", "x": [ 1, 10 ], "y": [ 1, 10 ], "target": true, "name": "被标记的", "repeat": [ 10, 20 ] }
+            ]
+          }
+        },
+        "end": {
+          "effect": [
+            { "u_add_var": "AZ_AA_complete_mission1", "value": "yes" },
+            {
+              "u_message": "看起来结束了，回去交差吧。",
+              "popup": true
+            }
+          ]
+        }
+    },
+    {
+      "id": "MISSION_AZ_AA_KILL_MONSTER_More",
+      "type": "mission_definition",
+      "name": { "str": "击杀指定目标位置的大量怪物" },
+      "goal": "MGOAL_KILL_MONSTERS",
+      "description": "我们的员工在搜索路线上发现了大量怪物，击杀它们并确保区域安全。",
+      "difficulty": 10,
+      "value": 25,
+      "start": {
+        "assign_mission_target": { "var": { "global_val": "AZ_AA_loc_for_mission_2" }},
+        "update_mapgen": {
+          "place_monster": [
+            { "group": "GROUP_AZ_AA_ZOMBIE", "x": [ 1, 13 ], "y": [ 1, 13 ], "target": true, "name": "被标记的", "repeat": [ 20, 40 ] }
+          ]
+        }
+      },
+      "end": {
+        "effect": [
+          { "u_add_var": "AZ_AA_complete_mission2", "value": "yes" },
+          {
+            "u_message": "看起来结束了，回去交差吧。",
+            "popup": true
+          }
+        ]
+      }
+  },
+  {
+    "id": "MISSION_AZ_AA_KILL_MONSTER_Moreeee",
+    "type": "mission_definition",
+    "name": { "str": "击杀指定目标位置的巨量怪物" },
+    "goal": "MGOAL_KILL_MONSTERS",
+    "description": "我们的员工在搜索路线上发现了巨量怪物，击杀它们并确保区域安全。",
+    "difficulty": 10,
+    "value": 25,
+    "start": {
+      "assign_mission_target": { "var": { "global_val": "AZ_AA_loc_for_mission_3" }},
+      "update_mapgen": {
+        "place_monster": [
+          { "group": "GROUP_AZ_AA_ZOMBIE", "x": [ 1, 15 ], "y": [ 1, 15 ], "target": true, "name": "被标记的", "repeat": [ 40, 60 ] }
+        ]
+      }
+    },
+    "end": {
+      "effect": [
+        { "u_add_var": "AZ_AA_complete_mission3", "value": "yes" },
+        {
+          "u_message": "看起来结束了，回去交差吧。",
+          "popup": true
+        }
+      ]
+    }
+  },
+  {
+    "id": "MISSION_AZ_AA_FIND_RECORD",
+    "type": "mission_definition",
+    "name": { "str": "回收指定目标位置的记录仪" },
+    "goal": "MGOAL_GO_TO",
+    "description": "我们的员工在搜索行动中遇难了，请回收他们的记录仪。",
+    "difficulty": 10,
+    "value": 25,
+    "start": {
+      "assign_mission_target": { "var": { "global_val": "AZ_AA_loc_for_mission_4" }},
+      "effect": [
+        { "map_spawn_item": "AZ_AA_RECORD", "loc": { "global_val": "AZ_AA_loc_for_mission_4" } }
+      ]
+    },
+    "end": {
+      "effect": [
+        { "u_add_var": "AZ_AA_complete_mission4", "value": "yes" },
+        {
+          "u_message": "看起来到了，只要找到记录仪就可以回去交任务了。",
+          "popup": true
+        }
+      ]
+    }
+  },
+  {
+    "id": "MISSION_AZ_AA_KILL_THUG",
+    "type": "mission_definition",
+    "name": { "str": "击杀拦路土匪" },
+    "goal": "MGOAL_ASSASSINATE",
+    "description": "我们的员工在搜索时发现了一些土匪，击杀他们并确保区域安全。",
+    "difficulty": 0,
+    "value": 0,
+    "start": {
+      "assign_mission_target": { "var": { "global_val": "AZ_AA_loc_for_mission_5" } },
+      "update_mapgen": {
+        "place_npcs": [
+          { "class": "thug", "x": [ 1, 22 ], "y": [ 1, 22 ], "repeat": [ 1, 1 ], "target": true },
+          { "class": "bandit", "x": [ 1, 22 ], "y": [ 1, 22 ], "repeat": [ 2, 3 ], "target": true }
+        ]
+      }
+    },
+    "end": {
+      "effect": [
+        { "u_add_var": "AZ_AA_complete_mission5", "value": "yes" },
+        {
+          "u_message": "看起来结束了，回去交差吧。",
+          "popup": true
+        }
+      ]
+    }
+  },
+  {
+    "id": "MISSION_AZ_AA_KILL_THUG_More",
+    "type": "mission_definition",
+    "name": { "str": "击杀土匪团" },
+    "goal": "MGOAL_ASSASSINATE",
+    "description": "我们的员工在搜索时发现了一个土匪团，击杀他们并确保区域安全。",
+    "difficulty": 0,
+    "value": 0,
+    "start": {
+      "assign_mission_target": { "var": { "global_val": "AZ_AA_loc_for_mission_6" } },
+      "update_mapgen": {
+        "place_npcs": [
+          { "class": "thug", "x": [ 1, 22 ], "y": [ 1, 22 ], "repeat": [ 3, 3 ], "target": true },
+          { "class": "bandit", "x": [ 1, 22 ], "y": [ 1, 22 ], "repeat": [ 4, 9 ], "target": true }
+        ]
+      }
+    },
+    "end": {
+      "effect": [
+        { "u_add_var": "AZ_AA_complete_mission6", "value": "yes" },
+        {
+          "u_message": "看起来结束了，回去交差吧。",
+          "popup": true
+        }
+      ]
+    }
+  },
+  {
+    "id": "MISSION_AZ_AA_SPY",
+    "type": "mission_definition",
+    "name": { "str": "侦查" },
+    "goal": "MGOAL_GO_TO",
+    "description": "我们需要你前往指定地点进行侦查。",
+    "difficulty": 10,
+    "value": 25,
+    "start": {
+      "assign_mission_target": { "var": { "global_val": "AZ_AA_loc_for_mission_7" }}
+    },
+    "end": {
+      "effect": [
+        { "u_add_var": "AZ_AA_complete_mission7", "value": "yes" },
+        {
+          "u_message": "看起来到了，可以回去交任务了。",
+          "popup": true
+        }
+      ]
+    }
+  }
+
+]
