@@ -1,0 +1,169 @@
+[
+  {
+    "id": "AZ_AA_The_Old",
+    "type": "MONSTER",
+    "name": {
+        "str": "旧日残像"
+      },
+      "description": "一只人形生物，但是完全由一种半透明的黑色晶体构成。当你靠近它的时候似乎能听到它在重复一些只会在“过去时光”才会出现的语句。",
+      "default_faction": "nether",
+      "bodytype": "human",
+      "species": [
+        "NETHER_EMANATION"
+      ],
+      "looks_like": "mon_lieutenant_shadow",
+      "volume": "75 L",
+      "weight": "60 kg",
+      "hp": 300,
+      "speed": 100,
+      "death_function": {
+          "corpse_type": "NO_CORPSE",
+          "message": "%s破裂成无数碎片并飘向空中"
+          },
+      "symbol": "@",
+      "color": "red_white",
+      "aggression": 100,
+      "morale": 100,
+      "melee_skill": 10,
+      "melee_dice": 4,
+      "melee_dice_sides": 6,
+      "melee_damage": [
+        {
+          "damage_type": "cut",
+          "amount": 10
+        }
+      ],
+      "dodge": 4,
+      "bleed_rate": 0,
+      "vision_day": 50,
+      "vision_night": 25,
+      "path_settings": {
+        "max_dist": 50,
+        "allow_open_doors": true,
+        "avoid_traps": true,
+        "avoid_sharp": true
+      },
+      "flags": [
+        "SEES",
+        "SMELLS",
+        "HEARS",
+        "WARM",
+        "HAS_MIND",
+        "BASHES",
+        "NO_BREATHE",
+        "PATH_AVOID_DANGER_1",
+        "CAN_OPEN_DOORS",
+        "PRIORITIZE_TARGETS",
+        "CORNERED_FIGHTER"
+      ],
+      "armor": {
+        "bash": 10,
+        "cut": 10,
+        "bullet": 10,
+        "electric": 10
+      }
+  },
+  {
+    "id": "AZ_AA_The_Old_shooter",
+    "type": "MONSTER",
+    "name": {
+      "str": "旧日残像-士兵"
+    },
+    "description": "一只人形生物，但是完全由一种半透明的黑色晶体构成。当你靠近它的时候似乎能听到它在重复一些只会在“过去时光”才会出现的语句。\n这一只携带了类似枪械的武器，以及由黑色晶体构成的护甲。",
+    "default_faction": "nether",
+    "bodytype": "human",
+    "species": [
+      "NETHER_EMANATION"
+    ],
+    "looks_like": "mon_lieutenant_shadow",
+    "volume": "75 L",
+    "weight": "60 kg",
+    "hp": 300,
+    "speed": 90,
+    "death_function": {
+        "corpse_type": "NO_CORPSE",
+        "message": "%s破裂成无数碎片并飘向空中"
+        },
+    "symbol": "@",
+    "color": "red_white",
+    "aggression": 100,
+    "morale": 100,
+    "melee_skill": 10,
+    "melee_dice": 4,
+    "melee_dice_sides": 6,
+    "melee_damage": [
+      {
+        "damage_type": "cut",
+        "amount": 10
+      }
+    ],
+    "starting_ammo": {
+      "556": 150
+    },
+    "special_attacks": [
+      {
+        "type": "gun",
+        "cooldown": 5,
+        "move_cost": 150,
+        "gun_type": "modular_m4_carbine",
+        "ammo_type": "556",
+        "fake_skills": [
+          [
+            "gun",
+            1
+          ],
+          [
+            "rifle",
+            1
+          ]
+        ],
+        "fake_dex": 6,
+        "ranges": [
+          [
+            0,
+            36,
+            "DEFAULT"
+          ]
+        ],
+        "require_targeting_npc": true,
+        "require_targeting_monster": true,
+        "target_moving_vehicles": true,
+        "laser_lock": false,
+        "targeting_cost": 300,
+        "targeting_timeout_extend": -10,
+        "targeting_sound": "\"你正在非法入侵！离开这里！\"",
+        "targeting_volume": 50,
+        "no_ammo_sound": "我没子弹了！"
+      }
+    ],
+    "dodge": 4,
+    "bleed_rate": 0,
+    "vision_day": 50,
+    "vision_night": 25,
+    "path_settings": {
+      "max_dist": 50,
+      "allow_open_doors": true,
+      "avoid_traps": true,
+      "avoid_sharp": true
+    },
+    "flags": [
+      "SEES",
+      "SMELLS",
+      "HEARS",
+      "WARM",
+      "HAS_MIND",
+      "BASHES",
+      "NO_BREATHE",
+      "PATH_AVOID_DANGER_1",
+      "CAN_OPEN_DOORS",
+      "PRIORITIZE_TARGETS",
+      "CORNERED_FIGHTER"
+    ],
+    "armor": {
+      "bash": 20,
+      "cut": 20,
+      "bullet": 20,
+      "electric": 20
+    }
+  }
+]

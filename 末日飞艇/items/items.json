@@ -196,5 +196,671 @@
               "EOC_AZ_AA_updata"
             ]
         }
+    },
+    {
+      "id": "AZ_AA_Life",
+      "type": "GENERIC",
+      "name": {
+          "str_sp": "“生命”"
+        },
+      "category": "other",
+      "description": "一颗闪耀着如鲜血般鲜红光芒的十二面体宝石，当你握着它的时候似乎能感受到它的“生命”",
+      "volume": "50 ml",
+      "weight": "100 g",
+      "material": [
+          "glass"
+        ],
+      "symbol": "*",
+      "color": "red",
+      "price_postapoc": 0
+    },
+    {
+        "id": "AZ_AA_LX-1",
+        "type": "COMESTIBLE",
+        "comestible_type": "MED",
+        "name": {
+            "str_sp": "“LX-1”型恢复针剂"
+        },
+        "description": "一种实验性的恢复针剂，内部的液体如鲜血般殷红。",
+        "volume": "75 ml",
+        "weight": "100 g",
+        "material": [
+            "glass",
+            "steel",
+            "drug_filler"
+        ],
+        "symbol": "!",
+        "color": "red",
+        "price_postapoc": 0,
+        "flags": [
+            "SINGLE_USE"
+        ],
+        "healthy": 5,
+        "use_action": {
+          "type": "consume_drug",
+          "activation_message": "你注射了“LX-1”型恢复针剂。",
+          "effects": [
+            {
+              "id": "AZ_AA_LX-1_effect",
+              "duration": 180
+            },
+            {
+              "id": "cureall"
+            }
+          ]
+        }
+    },
+    {
+      "type": "effect_type",
+      "id": "AZ_AA_LX-1_effect",
+      "name": [ "“LX-1”型恢复针剂" ],
+      "desc": [ "你正在受到“LX-1”型恢复针剂的影响。" ],
+      "remove_message": "“LX-1”型恢复针剂的效果正在减弱。",
+      "effect_dur_scaling": [ { "effect_id": "bleed", "modifier": 0.25} ],
+      "base_mods": { 
+        "hurt_min": [ -1 ],
+        "hurt_chance": [ 10 ]
+       },
+      "max_duration": 14400,
+      "blood_analysis_description": "液态“生命”"
+    },
+    {
+      "id": "AZ_AA_Dead_Body",
+      "type": "GENERIC",
+      "name": {
+          "str_sp": "结晶化的尸体"
+        },
+      "category": "other",
+      "description": "一具尸体，躯干的一部分布满了黑色的晶体。根据臂章可以判断出他隶属于“末日飞艇”。",
+      "volume": "75 L",
+      "weight": "60 kg",
+      "material": [
+          "glass",
+          "hflesh"
+        ],
+      "symbol": "%",
+      "color": "black",
+      "price_postapoc": 0
+    },
+    {
+      "id": "AZ_AA_RECORD_special",
+      "type": "GENERIC",
+      "name": {
+          "str_sp": "记录仪"
+        },
+      "category": "other",
+      "description": "一个记录仪，记录了该外勤小队收集的信息。",
+      "volume": "50 ml",
+      "weight": "100 g",
+      "material": [
+          "steel"
+        ],
+      "symbol": "=",
+      "color": "red",
+      "price_postapoc": 0
+    },
+    {
+      "type": "ammunition_type",
+      "id": "AZ_AA_1mm",
+      "name": "1mm",
+      "default": "AZ_AA_1mm_AP"
+    },
+    {
+      "type": "ammunition_type",
+      "id": "AZ_AA_9mm_bomb",
+      "name": "9x50mm",
+      "default": "AZ_AA_9mm_bomb_HE"
+    },
+    {
+      "id": "AZ_AA_1mm_gun",
+      "type": "GUN",
+      "reload_noise_volume": 10,
+      "name": {
+        "str": "“蜂刺”1mm单兵自卫武器"
+      },
+      "description": "一种实验性的武器，旨在通过具有自锐效应的针型弹击穿非常规装甲,该武器在出厂时已完成改装，无法进行后续自定义改造。",
+      "variant_type": "gun",
+      "weight": "2300 g",
+      "volume": "4000 ml",
+      "longest_side": "400 mm",
+      "barrel_length": "200 mm",
+      "price": 0,
+      "to_hit": -2,
+      "material": [
+        "steel",
+        "plastic"
+      ],
+      "symbol": "(",
+      "color": "dark_gray",
+      "range": 2,
+      "ammo": [
+        "AZ_AA_1mm"
+      ],
+      "skill": "smg",
+      "dispersion": 30,
+      "durability": 8,
+      "min_cycle_recoil": 40,
+      "modes": [
+        [
+          "DEFAULT",
+          "单发射击",
+          1
+        ],
+        [
+          "AUTO",
+          "短点射",
+          5
+        ],
+        [
+          "AUTO2",
+          "长点射",
+          15
+        ],
+        [
+          "AUTO3",
+          "全自动",
+          25
+        ]
+      ],
+      "faults": [
+        "fault_gun_chamber_spent"
+      ],
+      "pocket_data": [
+        {
+          "pocket_type": "MAGAZINE_WELL",
+          "item_restriction": [
+            "AZ_AA_1mm_mag_100"
+          ]
+        }
+      ],
+      "melee_damage": {
+        "bash": 11
+      }
+    },
+    {
+      "id": "AZ_AA_1mm_mag_100",
+      "type": "MAGAZINE",
+      "name": {
+        "str": "“蜂刺”1mm单兵自卫武器 100发弹夹"
+      },
+      "description": "一个100发的1mm弹夹，用于“蜂刺”1mm单兵自卫武器。",
+      "weight": "200 g",
+      "volume": "500 ml",
+      "price": 0,
+      "material": [
+        "plastic",
+        "steel"
+      ],
+      "symbol": "#",
+      "color": "light_gray",
+      "ammo_type": [
+        "AZ_AA_1mm"
+      ],
+      "flags": [
+        "MAG_COMPACT"
+      ],
+      "pocket_data": [
+        {
+          "pocket_type": "MAGAZINE",
+          "rigid": true,
+          "ammo_restriction": {
+            "AZ_AA_1mm": 100
+          }
+        }
+      ]
+    },
+    {
+      "id": "AZ_AA_1mm_AP",
+      "type": "AMMO",
+      "name": {
+        "str_sp": "1mm 贫铀穿甲弹"
+      },
+      "description": "实验性的弹药，用于“蜂刺”1mm单兵自卫武器。",
+      "weight": "20 g",
+      "volume": "60 ml",
+      "longest_side": "100 mm",
+      "price": 0 ,
+      "flags": [
+        "IRREPLACEABLE_CONSUMABLE"
+      ],
+      "material": [
+        "brass",
+        "superalloy",
+        "powder"
+      ],
+      "symbol": "=",
+      "color": "yellow",
+      "count": 100,
+      "stack_size": 100,
+      "ammo_type": "AZ_AA_1mm",
+      "casing": "AZ_AA_1mm_casing",
+      "range": 20,
+      "//": "w，设计是“高破甲低伤害”，同时作为奖励性武器，高射速可以弥补低伤害",
+      "damage": {
+        "damage_type": "bullet",
+        "amount": 10,
+        "armor_penetration": 75
+      },
+      "dispersion": 10,
+      "recoil": 100,
+      "effects": [
+        "COOKOFF"
+      ]
+    },
+    {
+      "type": "GENERIC",
+      "category": "spare_parts",
+      "name": {
+        "str": "1mm 贫铀穿甲弹壳"
+      },
+      "stackable": true,
+      "material": [
+        "brass"
+      ],
+      "symbol": "=",
+      "looks_like": "9mm_casing",
+      "color": "yellow",
+      "id": "AZ_AA_1mm_casing",
+      "copy-from": "casing",
+      "description": "一颗1mm贫铀穿甲弹的弹壳，看起来无法复装。",
+      "weight": "3 g",
+      "volume": "30 ml"
+    },
+    {
+      "id": "AZ_AA_9mm_bomb_gun",
+      "type": "GUN",
+      "reload_noise_volume": 10,
+      "name": {
+        "str": "“炽隼”9mm榴弹发射器"
+      },
+      "description": "一种实验性的武器，旨在通过覆盖性的爆炸高效清除软目标，该武器在出厂时已完成改装，无法进行后续自定义改造。",
+      "variant_type": "gun",
+      "weight": "4000 g",
+      "volume": "5000 ml",
+      "longest_side": "400 mm",
+      "barrel_length": "200 mm",
+      "price": 0,
+      "to_hit": -2,
+      "material": [
+        "superalloy",
+        "plastic"
+      ],
+      "symbol": "(",
+      "color": "dark_gray",
+      "range": 2,
+      "ammo": [
+        "AZ_AA_9mm_bomb"
+      ],
+      "skill": "launcher",
+      "dispersion": 120,
+      "durability": 8,
+      "min_cycle_recoil": 1200,
+      "modes": [
+        [
+          "DEFAULT",
+          "单发射击",
+          1
+        ],
+        [
+          "AUTO",
+          "短点射",
+          3
+        ],
+        [
+          "AUTO2",
+          "长点射",
+          5
+        ],
+        [
+          "AUTO3",
+          "覆盖射击",
+          10
+        ]
+      ],
+      "faults": [
+        "fault_gun_chamber_spent"
+      ],
+      "pocket_data": [
+        {
+          "pocket_type": "MAGAZINE_WELL",
+          "item_restriction": [
+            "AZ_AA_9mm_bomb_mag_20"
+          ]
+        }
+      ],
+      "melee_damage": {
+        "bash": 11
+      }
+    },
+    {
+      "id": "AZ_AA_9mm_bomb_mag_20",
+      "type": "MAGAZINE",
+      "name": {
+        "str": "“炽隼”9mm榴弹发射器 20发弹夹"
+      },
+      "description": "一个20发的9mm榴弹弹夹，用于“炽隼”9mm榴弹发射器。",
+      "weight": "200 g",
+      "volume": "500 ml",
+      "price": 0,
+      "material": [
+        "plastic",
+        "steel"
+      ],
+      "symbol": "#",
+      "color": "light_gray",
+      "ammo_type": [
+        "AZ_AA_9mm_bomb"
+      ],
+      "flags": [
+        "MAG_COMPACT"
+      ],
+      "pocket_data": [
+        {
+          "pocket_type": "MAGAZINE",
+          "rigid": true,
+          "ammo_restriction": {
+            "AZ_AA_9mm_bomb": 20
+          }
+        }
+      ]
+    },
+    {
+      "id": "AZ_AA_9mm_bomb_HE",
+      "type": "AMMO",
+      "name": {
+        "str_sp": "9x50mm 微型高爆弹"
+      },
+      "description": "实验性的弹药，用于“炽隼”9mm榴弹发射器。",
+      "weight": "20 g",
+      "volume": "50 ml",
+      "longest_side": "50 mm",
+      "price": 0 ,
+      "flags": [
+        "IRREPLACEABLE_CONSUMABLE"
+      ],
+      "material": [
+        "brass",
+        "superalloy",
+        "powder"
+      ],
+      "symbol": "=",
+      "color": "yellow",
+      "count": 20,
+      "stack_size": 20,
+      "ammo_type": "AZ_AA_9mm_bomb",
+      "casing": "AZ_AA_9mm_bomb_casing",
+      "range": 30,
+      "//": "爆炸就是艺术！",
+      "damage": {
+        "damage_type": "bullet",
+        "amount": 30,
+        "armor_penetration": 5
+      },
+      "dispersion": 300,
+      "recoil": 1600,
+      "effects": [
+        "COOKOFF",
+        "EXPLOSIVE_AZ_AA_9mm_bomb"
+      ]
+    },
+    {
+      "type": "GENERIC",
+      "category": "spare_parts",
+      "name": {
+        "str": "9x50mm 微型高爆弹弹壳"
+      },
+      "stackable": true,
+      "material": [
+        "brass"
+      ],
+      "symbol": "=",
+      "looks_like": "9mm_casing",
+      "color": "yellow",
+      "id": "AZ_AA_9mm_bomb_casing",
+      "copy-from": "casing",
+      "description": "一颗9x50mm微型高爆弹的弹壳，看起来无法复装。",
+      "weight": "10 g",
+      "volume": "20 ml"
+    },
+    {
+      "id": "EXPLOSIVE_AZ_AA_9mm_bomb",
+      "type": "ammo_effect",
+      "explosion": { "power": 15, "shrapnel": { "casing_mass": 30, "fragment_mass": 0.6 } }
+    },
+    {
+      "type": "ENGINE",
+      "category": "veh_parts",
+      "name": {
+        "str": "“漩涡”引擎"
+      },
+      "material": [
+        "superalloy"
+      ],
+      "symbol": ":",
+      "color": "light_cyan",
+      "copy-from": "engine_gasoline",
+      "id": "AZ_AA_Vortex_Stone_engine",
+      "description": "一个暗灰色的金属立方，在侧面有多个接口。功率相当于一个标准的6缸引擎。看起来他们在易用性方面下了不少功夫，安装它不会需要太多技能。",
+      "weight": "5 kg",
+      "volume": "2 L",
+      "price": 0,
+      "displacement": 450
+    },
+    {
+      "type": "vehicle_part",
+      "categories": [
+        "movement"
+      ],
+      "location": "engine_block",
+      "color": "light_cyan",
+      "broken_color": "red",
+      "damage_modifier": 80,
+      "noise_factor": 3,
+      "damaged_power_factor": 0.25,
+      "m2c": 60,
+      "flags": [
+        "ENGINE",
+        "E_ALTERNATOR"
+      ],
+      "description": "一个次世代的引擎，功率相当于一个标准的6缸引擎，只需要少量特制“燃料”就可以工作到永恒（至少对于你我而言）。",
+      "variants": [
+        {
+          "symbols": "*",
+          "symbols_broken": "#"
+        }
+      ],
+      "fuel_type": "AZ_AA_Vortex_liquid",
+      "id": "AZ_AA_Vortex_Stone_engine_install",
+      "item": "AZ_AA_Vortex_Stone_engine",
+      "durability": 400,
+      "epower": "0 W",
+      "power": "149200 W",
+      "energy_consumption": "1 W",
+      "breaks_into": [
+        {
+          "item": "steel_chunk",
+          "count": [
+            1,
+            5
+          ]
+        }
+      ],
+      "requirements": {
+        "install": {
+          "skills": [
+            [
+              "mechanics",
+              1
+            ]
+          ],
+          "time": "5 m",
+          "using": [
+            [
+              "vehicle_wrench_2",
+              1
+            ]
+          ]
+        },
+        "removal": {
+          "skills": [
+            [
+              "mechanics",
+              1
+            ]
+          ],
+          "time": "5 m",
+          "using": [
+            [
+              "vehicle_wrench_2",
+              1
+            ]
+          ]
+        }
+      },
+      "damage_reduction": {
+        "all": 100
+      }
+    },
+    {
+      "id": "AZ_AA_Vortex_liquid",
+      "type": "AMMO",
+      "name": {
+        "str_sp": "液态“扭曲”"
+      },
+      "description": "这并非是自然的造物。。。",
+      "category": "fuel",
+      "weight": "1 g",
+      "volume": "500 ml",
+      "price": 0,
+      "count": 100,
+      "stack_size": 100,
+      "phase": "liquid",
+      "container": "AZ_AA_Vortex_liquid_container",
+      "material": [
+        "AZ_AA_Vortex_liquid_material"
+      ],
+      "symbol": "=",
+      "color": "light_red",
+      "ammo_type": "AZ_AA_AMMO_Vortex_liquid",
+      "effects": [
+        "STREAM"
+      ]
+    },
+    {
+      "type": "ammunition_type",
+      "id": "AZ_AA_AMMO_Vortex_liquid",
+      "name": "液态“扭曲”",
+      "default": "AZ_AA_Vortex_liquid"
+    },
+    {
+      "type": "material",
+      "id": "AZ_AA_Vortex_liquid_material",
+      "name": "液态“扭曲”",
+      "density": 0.75,
+      "conductive": false,
+      "copy-from": "hydrocarbons",
+      "burn_data": [
+        { "fuel": 1, "smoke": 6, "burn": 1 },
+        { "fuel": 10, "smoke": 6, "burn": 2 },
+        { "fuel": 30, "smoke": 6, "burn": 3 }
+      ],
+      "fuel_data": {
+        "energy": "11451400 kJ"
+      }
+    },
+    {
+      "id": "AZ_AA_Vortex_liquid_container",
+      "type": "GENERIC",
+      "category": "container",
+      "name": {
+        "str": "“扭曲”相位拘束单元"
+      },
+      "description": "一个特制容器，可以装载液态“扭曲”。它侧面有预制的接口，看起来可以连接到“漩涡”引擎上。",
+      "weight": "1600 g",
+      "volume": "2500 ml",
+      "longest_side": "10 cm",
+      "price": 0,
+      "to_hit": -2,
+      "material": [
+        "superalloy"
+      ],
+      "symbol": ")",
+      "color": "light_cyan",
+      "pocket_data": [
+        {
+          "pocket_type": "CONTAINER",
+          "rigid": true,
+          "watertight": true,
+          "max_contains_volume": "500 ml",
+          "max_item_volume": "32 ml",
+          "max_contains_weight": "15 kg"
+        }
+      ],
+      "flags": [
+        "COLLAPSE_CONTENTS",
+        "NO_UNLOAD",
+        "NO_RELOAD"
+      ]
+    },
+    {
+      "id": "AZ_AA_Vortex_liquid_tank",
+      "type": "vehicle_part",
+      "name": {
+        "str": "“扭曲”相位拘束单元"
+      },
+      "item": "AZ_AA_Vortex_liquid_container",
+      "location": "fuel_source",
+      "broken_color": "red",
+      "durability": 75,
+      "description": "一个特制容器，可以装载液态“扭曲”。",
+      "categories": [
+        "movement"
+      ],
+      "damage_modifier": 80,
+      "folded_volume": "500 ml",
+      "breaks_into": [
+        {
+          "item": "scrap",
+          "count": [
+            1,
+            2
+          ]
+        }
+      ],
+      "requirements": {
+        "install": {
+          "skills": [
+            [
+              "mechanics",
+              1
+            ]
+          ],
+          "time": "5 m"
+        },
+        "removal": {
+          "skills": [
+            [
+              "mechanics",
+              1
+            ]
+          ],
+          "time": "5 m"
+        }
+      },
+      "flags": [
+        "FLUIDTANK",
+        "NO_UNLOAD",
+        "NO_RELOAD"
+      ],
+      "damage_reduction": {
+        "all": 26,
+        "stab": 8
+      },
+      "variants": [
+        {
+          "symbols": "O",
+          "symbols_broken": "#"
+        }
+      ]
     }
 ]

@@ -8,7 +8,69 @@
             { "text": "可以帮我安装CBM吗？", "topic": "TALK_DONE", "effect": "bionic_install" },
             { "text": "可以帮我移除CBM吗？", "topic": "TALK_DONE", "effect": "bionic_remove" },
             { "text": "我感觉相当不舒服，可以帮我治疗一下吗？", "topic": "TALK_AZ_AA_M_TREAT"},
+            {
+                "text":"我想知道“生命”分析的怎么样了。",
+                "topic":"TALK_AZ_AA_M_Life_frist",
+                "condition":{
+                    "and":[
+                        { "u_has_var":"AZ_AA_give_life","value":"yes" },
+                        { "not":{ "u_has_var":"AZ_AA_Life_have_ask","value":"yes"} } 
+                    ]
+                },
+                "effect":[
+                    {
+                        "u_add_var":"AZ_AA_Life_have_ask","value":"yes"
+                    }
+                ]
+            },
+            {
+                "text":"我想购买一些“LX-1”型恢复针剂。",
+                "topic":"TALK_AZ_AA_M_Life_not_frist",
+                "condition":{
+                    "u_has_var":"AZ_AA_Life_have_ask","value":"yes"
+                }
+            },
             { "text": "再见！", "topic": "TALK_DONE" }
+        ]
+    },
+    {
+        "type": "talk_topic",
+        "id": "TALK_AZ_AA_M_Life_frist",
+        "dynamic_line":[
+            "OwO！是你提供的样本啊。这份样本很有价值，我们在实验中注意到它能显著提高生物的恢复能力。[她顿了顿]总而言之，我们推出了“LX-1”型恢复针剂。尽管仍在实验阶段，但仍然有相当不错的效果。对了，这份是送的，为了感谢你。"
+        ],
+        "responses":[
+            {
+                "text":"令人惊讶。谢谢",
+                "topic":"TALK_DONE",
+                "effect":[
+                    { "u_spawn_item": "AZ_AA_LX-1", "count": 1 }
+                ]
+            }
+        ]
+    },
+    {
+        "type": "talk_topic",
+        "id": "TALK_AZ_AA_M_Life_not_frist",
+        "dynamic_line":[
+            "当然，不过由于原材料的稀缺性，一单位的“LX-1”型恢复针剂售价为100商会币。我们需要付报酬给外勤人员，抱歉。。。"
+        ],
+        "responses":[
+            {
+                "text":"请给我一份",
+                "topic":"TALK_DONE",
+                "condition":{
+                    "u_has_items":{
+                        "item":"FMCNote",
+                        "count":100
+                    }
+                },
+                "effect":[
+                    { "u_consume_item": "FMCNote", "count": 100, "popup": true },
+                    { "u_spawn_item": "AZ_AA_LX-1", "count": 1 }
+                ]
+            },
+            { "text": "让我们讨论一下其他的事情吧。", "topic": "TALK_AZ_AA_M" }
         ]
     },
     {
@@ -53,7 +115,69 @@
         "dynamic_line": "来挑一把趁手的武器？",
         "responses": [
             { "text": "让我康康有什么？", "effect": "start_trade", "topic": "TALK_DONE" },
+            { 
+                "text": "我想看看“蜂刺”系列的武器。",
+                "topic": "TALK_AZ_AA_G_1mm",
+                "condition": { "u_has_var": "AZ_AA_have_complete_special_mission_1mm", "value": "yes" }
+            },
+            {
+                "text": "我想看看“炽隼”系列的武器。",
+                "topic": "TALK_AZ_AA_G_9mm_bomb",
+                "condition": { "u_has_var": "AZ_AA_have_complete_special_mission_9mm_bomb", "value": "yes" }
+            },
             { "text": "再见！", "topic": "TALK_DONE" }
+        ]
+    },
+    {
+        "type": "talk_topic",
+        "id": "TALK_AZ_AA_G_1mm",
+        "dynamic_line": "[他递出了一份报价表]好，不过由于“蜂刺”仍是实验性的武器，所以目前的定价可能会比较贵。\n[“蜂刺”1mm单兵自卫武器]售价200商会币，包括一个满弹匣。\n[100发“蜂刺”1mm弹药]售价50商会币，带弹匣。",
+        "responses": [
+            {
+                "text": "“蜂刺”1mm单兵自卫武器。（包括一个满弹匣）",
+                "topic": "TALK_AZ_AA_G_1mm",
+                "condition": { "u_has_items": { "item": "FMCNote", "count": 200 } },
+                "effect": [
+                    { "u_consume_item": "FMCNote", "count": 200, "popup": true },
+                    { "u_spawn_item": "AZ_AA_1mm_gun", "count": 1 }
+                ]
+            },
+            {
+                "text": "100发“蜂刺”1mm弹药。（带弹匣）",
+                "topic": "TALK_AZ_AA_G_1mm",
+                "condition": { "u_has_items": { "item": "FMCNote", "count": 50 } },
+                "effect": [
+                    { "u_consume_item": "FMCNote", "count": 50, "popup": true },
+                    { "u_spawn_item": "AZ_AA_1mm_mag_100", "count": 1 }
+                ]
+            },
+            { "text": "我们先讨论一下其他的事情吧。", "topic": "TALK_AZ_AA_G" }
+        ]
+    },
+    {
+        "type": "talk_topic",
+        "id": "TALK_AZ_AA_G_9mm_bomb",
+        "dynamic_line": "[他递出了一份报价表]好，不过由于“炽隼”仍是实验性的武器，所以目前的定价可能会比较贵。\n[“炽隼”9mm榴弹发射器]售价300商会币，包括一个满弹匣。\n[20发“炽隼”9mm弹药]售价50商会币，带弹匣。",
+        "responses": [
+            {
+                "text": "“炽隼”9mm榴弹发射器。（包括一个满弹匣）",
+                "topic": "TALK_AZ_AA_G_9mm_bomb",
+                "condition": { "u_has_items": { "item": "FMCNote", "count": 300 } },
+                "effect": [
+                    { "u_consume_item": "FMCNote", "count": 300, "popup": true },
+                    { "u_spawn_item": "AZ_AA_9mm_bomb_gun", "count": 1 }
+                ]
+            },
+            {
+                "text": "20发“炽隼”9mm弹药。（带弹匣）",
+                "topic": "TALK_AZ_AA_G_9mm_bomb",
+                "condition": { "u_has_items": { "item": "FMCNote", "count": 50 } },
+                "effect": [
+                    { "u_consume_item": "FMCNote", "count": 50, "popup": true },
+                    { "u_spawn_item": "AZ_AA_9mm_bomb_mag_20", "count": 20 }
+                ]
+            },
+            { "text": "我们先讨论一下其他的事情吧。", "topic": "TALK_AZ_AA_G" }
         ]
     },
     {

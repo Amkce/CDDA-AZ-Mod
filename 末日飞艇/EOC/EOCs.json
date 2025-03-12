@@ -88,6 +88,50 @@
           "random": true
         }
       },
+      {
+        "u_location_variable": { "global_val": "AZ_AA_loc_for_special_mission_1" },
+        "target_params": {
+          "om_terrain": "field",
+          "om_terrain_match_type": "CONTAINS",
+          "search_range": 40,
+          "min_distance": 10,
+          "z": 0,
+          "random": true
+        }
+      },
+      {
+        "u_location_variable": { "global_val": "AZ_AA_loc_for_special_mission_2" },
+        "target_params": {
+          "om_terrain": "field",
+          "om_terrain_match_type": "CONTAINS",
+          "search_range": 40,
+          "min_distance": 10,
+          "z": 0,
+          "random": true
+        }
+      },
+      {
+        "u_location_variable": { "global_val": "AZ_AA_loc_for_special_mission_1mm" },
+        "target_params": {
+          "om_terrain": "field",
+          "om_terrain_match_type": "CONTAINS",
+          "search_range": 40,
+          "min_distance": 10,
+          "z": 0,
+          "random": true
+        }
+      },
+      {
+        "u_location_variable": { "global_val": "AZ_AA_loc_for_special_mission_9mm_bomb" },
+        "target_params": {
+          "om_terrain": "field",
+          "om_terrain_match_type": "CONTAINS",
+          "search_range": 40,
+          "min_distance": 10,
+          "z": 0,
+          "random": true
+        }
+      },
       {               
         "u_location_variable": { "global_val": "AZ_AA_TP" },
         "target_params": { "om_terrain": "AZ_AA_U", "search_range": 5000, "z": 7 },

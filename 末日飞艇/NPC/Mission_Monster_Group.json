@@ -1,0 +1,48 @@
+[
+    {
+        "type": "monstergroup",
+        "name": "GROUP_AZ_AA_ZOMBIE",
+        "monsters": [
+          { "monster": "mon_zombie", "weight": 223 },
+          { "monster": "mon_zombie_fat", "weight": 100, "cost_multiplier": 2 },
+          { "monster": "mon_zombie_child", "weight": 40 },
+          { "monster": "mon_zombie_tough", "weight": 40, "cost_multiplier": 3 },
+          { "monster": "mon_zombie_rot", "weight": 20, "cost_multiplier": 2 },
+          { "monster": "mon_zombie_crawler", "weight": 10, "cost_multiplier": 2 },
+          { "monster": "mon_zombie_cop", "weight": 280, "cost_multiplier": 3 },
+          { "monster": "mon_zombie_swat", "weight": 140, "cost_multiplier": 3 },
+          { "monster": "mon_zombie_medical", "weight": 10, "cost_multiplier": 2 },
+          { "monster": "mon_zombie_hazmat", "weight": 10, "cost_multiplier": 2 },
+          { "monster": "mon_zombie_fireman", "weight": 20, "cost_multiplier": 2 },
+          { "monster": "mon_dog_zombie_cop", "weight": 40, "cost_multiplier": 2 },
+          { "monster": "mon_zombie_dog", "weight": 10, "cost_multiplier": 2 },
+          { "monster": "mon_dog_zombie_rot", "weight": 5, "cost_multiplier": 2 },
+          { "monster": "mon_zombie_swimmer_base", "weight": 20, "cost_multiplier": 2 },
+          { "monster": "mon_zombie_static", "weight": 30, "cost_multiplier": 5 },
+          { "monster": "mon_zombie_paramilitary", "weight": 10, "cost_multiplier": 8 },
+          { "monster": "mon_zombie_survivor", "weight": 1, "cost_multiplier": 8 },
+          { "monster": "mon_zombie_survivor_elite", "weight": 1, "cost_multiplier": 8 }
+        ]
+    },
+    {
+      "type": "monstergroup",
+      "name": "GROUP_AZ_AA_The_Old",
+      "monsters":[
+        {"monster": "AZ_AA_The_Old"}
+      ]
+    },
+    {
+      "type": "monstergroup",
+      "name": "GROUP_AZ_AA_1mm",
+      "monsters":[
+        {"monster": "mon_zombie_armored"}
+      ]
+    },
+    {
+      "type": "monstergroup",
+      "name": "GROUP_AZ_AA_9mm_bomb",
+      "monsters":[
+        {"monster": "mon_zombie"}
+      ]
+    }
+]

@@ -1,0 +1,483 @@
+[
+    {
+        "type":"talk_topic",
+        "id":"TALK_AZ_AA_CHOOSE_Special_Mission_1",
+        "dynamic_line":[
+            "侦察系统发现了一些不同寻常的空间波动，我们确信其可能与空间风暴的残留物有关。我们需要你去坐标处清理所有可能的威胁并带回任何你觉得有意思的物品。请注意，由于直接情报的缺失，我们无法对威胁进行具体评估，但该处仍然有相当可预见的危险。"
+        ],
+        "responses":[
+            {
+                "text": "我接了，坐标在哪？",
+                "topic": "TALK_AZ_AA_CHOOSE_Special_Mission_1_YES"
+            },
+            {
+                "text": "我们先讨论一下其他事吧",
+                "topic": "TALK_AZ_AA_OUTER_Mission"
+            }
+        ]
+    },
+    {
+        "type":"talk_topic",
+        "id":"TALK_AZ_AA_CHOOSE_Special_Mission_1_YES",
+        "dynamic_line":[
+            "好，已记录。坐标已经标记在你的地图上。"
+        ],
+        "responses":[
+            {
+                "text":"好的，我会尽快完成。","topic":"TALK_DONE",
+                "effect":{ "assign_mission": "MISSION_AZ_AA_KILL_The_Old" }
+            }
+        ]
+    },
+    {
+        "type":"talk_topic",
+        "id":"TALK_AZ_AA_COMPLETE_Special_Mission_1",
+        "dynamic_line":[
+            "[她接过你的调查报告并简单的扫视了一下]这份报告很有价值，还有其他要汇报的吗？"
+        ],
+        "responses":[
+            {
+                "text":"就这些了。",
+                "topic":"TALK_DONE",
+                "effect":[
+                    { "u_spawn_item": "AZ_AA_FEAT", "count": 50 },
+                    { "u_add_var": "AZ_AA_have_complete_special_mission_1", "value": "yes" }
+                ]
+            },
+            {
+                "text":"[交出“生命”]，我还找到了这个。",
+                "topic":"TALK_AZ_AA_COMPLETE_Special_Mission_1_life",
+                "condition": { "u_has_items": { "item": "AZ_AA_Life", "count": 1 } },
+                "effect": 
+                    [
+                        { "u_consume_item": "AZ_AA_Life", "count": 1, "popup": true }
+                    ]
+            }
+        ]
+    },
+    {
+        "type":"talk_topic",
+        "id":"TALK_AZ_AA_COMPLETE_Special_Mission_1_life",
+        "dynamic_line":[
+            "[她接过“生命”并简单检视了一下]我会它交给泽尔特（医生）来分析，也许你过一会可以去问问她。当然，这会有额外奖励的"
+        ],
+        "responses":[
+            {
+                "text":"就这些了。",
+                "topic":"TALK_DONE",
+                "effect":[
+                    { "u_spawn_item": "AZ_AA_FEAT", "count": 60 },
+                    { "u_add_var": "AZ_AA_give_life", "value": "yes" },
+                    { "u_add_var": "AZ_AA_have_complete_special_mission_1", "value": "yes" }
+                ]
+            }
+        ]
+    },
+    {
+        "type":"talk_topic",
+        "id":"TALK_AZ_AA_COMPLETE_Special_Mission_2",
+        "dynamic_line":[
+            "[她看上去有些悲伤]我明白了。。。"
+        ],
+        "responses":[
+            {
+                "text":"节哀。.",
+                "topic":"TALK_DONE",
+                "effect":[
+                    { "u_spawn_item": "AZ_AA_FEAT", "count": 75 },
+                    { "u_consume_item": "AZ_AA_RECORD_special", "count": 1 , "popup": true},
+                    { "u_add_var": "AZ_AA_have_complete_special_mission_2", "value": "yes" }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "MISSION_AZ_AA_KILL_The_Old",
+        "type": "mission_definition",
+        "name": { "str": "旧日残像" },
+        "goal": "MGOAL_KILL_MONSTERS",
+        "description": "调查坐标位置并搜索所有可能的特殊物品",
+        "difficulty": 10,
+        "value": 25,
+        "start": {
+          "assign_mission_target": { "var": { "global_val": "AZ_AA_loc_for_special_mission_1" }},
+          "update_mapgen": {
+            "place_nested": [ { "chunks": [ "AZ_AA_The_Old_Mapgen" ], "x": 0, "y": 0 } ],
+            "place_monster": [
+              { "group": "GROUP_AZ_AA_The_Old", "x": [ 1, 23 ], "y": [ 1, 23 ], "target": true, "repeat": 8 }
+            ]
+          }
+        },
+        "end": {
+          "effect": [
+            { "u_add_var": "AZ_AA_complete_special_mission1", "value": "yes" },
+            {
+              "u_message": "当最后一只怪物倒下时，一颗闪耀的红色光芒的宝石出现在了你的面前",
+              "popup": true
+            },
+            { "u_spawn_item": "AZ_AA_Life", "count": 1 }
+          ]
+        }
+    },
+    {
+        "type":"talk_topic",
+        "id":"TALK_AZ_AA_CHOOSE_Special_Mission_2",
+        "dynamic_line":[
+            "我们的外勤人员在调查一处遗迹时通讯中断，我们需要派遣一位可靠的干员去调查并尽可能地救援任何可能的幸存者。请注意，根据失去联系前的回报，该遗迹结构复杂，有可预见的近接战斗，请注意武器选择。"
+        ],
+        "responses":[
+            {
+                "text":"我接了，坐标在哪？",
+                "topic": "TALK_AZ_AA_CHOOSE_Special_Mission_2_YES"
+            },
+            {
+                "text": "我们先讨论一下其他事吧",
+                "topic": "TALK_AZ_AA_OUTER_Mission"
+            }
+        ]
+    },
+    {
+        "type":"talk_topic",
+        "id":"TALK_AZ_AA_CHOOSE_Special_Mission_2_YES",
+        "dynamic_line":[
+            "好，已记录。坐标已经标记在你的地图上。"
+        ],
+        "responses":[
+            {
+                "text":"好的，我会尽快完成。","topic":"TALK_DONE",
+                "effect":{ "assign_mission": "MISSION_AZ_AA_Rescue" }
+            }
+        ]
+    },
+    {
+        "id": "MISSION_AZ_AA_Rescue",
+        "type": "mission_definition",
+        "name": { "str": "极速救援" },
+        "goal": "MGOAL_GO_TO",
+        "description": "调查坐标位置并搜寻可能的幸存者",
+        "difficulty": 10,
+        "value": 25,
+        "start": {
+            "assign_mission_target": { "var": { "global_val": "AZ_AA_loc_for_special_mission_2" }},
+            "update_mapgen": {
+                "place_nested": [ { "chunks": [ "AZ_AA_Rescue_Mapgen" ], "x": 0, "y": 0 } ]
+            }
+        },
+        "end": {
+            "effect": [
+                { "u_add_var": "AZ_AA_complete_special_mission2", "value": "yes" },
+                {
+                    "u_message": "看起来到了，准备进入吧。",
+                    "popup": true
+                }
+            ]
+        }
+    },
+    {
+        "type": "mapgen",
+        "method": "json",
+        "nested_mapgen_id": "AZ_AA_The_Old_Mapgen",
+        "object": {
+            "mapgensize": [24, 24],
+            "rows": [
+                "###########..###########",
+                "#......................#",
+                "#......................X",
+                "#..#####X############..#",
+                "#..#................#..#",
+                "#..#.......##.......#..#",
+                "#..#................#..#",
+                "#..X..........X.....#..#",
+                "#..#................X..#",
+                "#..xxxxx............#..#",
+                "#..#xx..............#..#",
+                "....x...#......#........",
+                ".....x..X......#........",
+                "#..#..x.............#..#",
+                "#..#..xx.........xxxx..#",
+                "#..#....X......xxxx.#..#",
+                "#..#............xx..#..#",
+                "#..#................X..#",
+                "#..#.......##.......#..#",
+                "#..#.............X..#..#",
+                "#..XX##########X#####..#",
+                "#......................#",
+                "#......................#",
+                "####XXX####..###########"
+            ],
+            "terrain": {
+                "X": [ "t_nether_glass_wall" ],
+                "#": [ "t_rock_wall" ],
+                ".": [ "t_rock_floor_no_roof" ],
+                "x": [ "t_nether_glass_floor" ]
+            },
+            "flags": [ "ERASE_ALL_BEFORE_PLACING_TERRAIN" ]
+        }
+    },
+    {
+        "type": "mapgen",
+        "method": "json",
+        "nested_mapgen_id": "AZ_AA_Rescue_Mapgen",
+        "object": {
+            "mapgensize": [24, 24],
+            "rows": [
+                "########################",
+                "#......................#",
+                "#.a......##########.####",
+                "#.....aa..#..#....#.#..#",
+                "#..#......#.#..##.#..#.#",
+                "#.........#.#...#....#.#",
+                "#......#..#.#.#..###..##",
+                "#.#.......#...#.##....##",
+                "#.........#.#.#.#..#...#",
+                "#......#..#..##.##...#.#",
+                "#..#aaa...#..#.....##..#",
+                "#.........#..#####..####",
+                "##a#####..#....#.#....##",
+                "#}........#.#....#....##",
+                "########..######o#######",
+                "#......#..#..#.........#",
+                "#..#.#.#..#..#.........#",
+                "#..#.#.o..#..#.........#",
+                "####o######++#####o#####",
+                "#.......}}#..#.........#",
+                "#...#.....o..+.........#",
+                "#.........#..#.........#",
+                "##.....#..#..#.........#",
+                "###########+o###########"
+            ],
+            "terrain": {
+                "a": [ "t_metal_floor" ],
+                "o": [ "t_door_metal_o" ],
+                "}": [ "t_metal_floor" ],
+                "#": [ "t_wall_metal" ],
+                ".": [ "t_metal_floor" ],
+                "+": [ "t_door_metal_locked" ]
+            },
+            "place_monster": [
+                { "monster": "AZ_AA_The_Old_shooter", "x": 1, "y": 1, "spawn_data": { "patrol": [ { "x": 2, "y": 2 } ] } },
+                { "monster": "AZ_AA_The_Old_shooter", "x": 4, "y": 2, "spawn_data": { "patrol": [ { "x": 5, "y": 3 } ] } },
+                { "monster": "AZ_AA_The_Old_shooter", "x": 5, "y": 2, "spawn_data": { "patrol": [ { "x": 6, "y": 3 } ] } },
+                { "monster": "AZ_AA_The_Old_shooter", "x": 20, "y": 3, "spawn_data": { "patrol": [ { "x": 4, "y": 7 } ] } },
+                { "monster": "AZ_AA_The_Old", "x": 4, "y": 15, "spawn_data": { "patrol": [ { "x": 5, "y": 16 } ] } },
+                { "monster": "AZ_AA_The_Old", "x": 11, "y": 8, "spawn_data": { "patrol": [ { "x": 12, "y": 9 } ] } },
+                { "monster": "AZ_AA_The_Old_shooter", "x": 16, "y": 11, "spawn_data": { "patrol": [ { "x": 17, "y": 12 } ] } },
+                { "monster": "AZ_AA_The_Old_shooter", "x": 18, "y": 11, "spawn_data": { "patrol": [ { "x": 19, "y": 12 } ] } }
+            ],
+            "furniture": {
+                "}": "f_counter",
+                "a": "f_sandbag_half"
+            },
+            "place_item": [
+                { "item": "AZ_AA_Dead_Body", "x": [14, 22], "y": [19, 22], "amount": 1, "repeat": 5 },
+                { "item": "AZ_AA_RECORD_special", "x": [14, 22], "y": [19, 22], "amount": 1}
+            ],
+            "flags": [ "ERASE_ALL_BEFORE_PLACING_TERRAIN" ]
+        }
+    },
+    {
+        "type":"talk_topic",
+        "id":"TALK_AZ_AA_CHOOSE_Special_Mission_1mm",
+        "dynamic_line":[
+            "根据我们的外勤人员的报告，常规武器在面对特殊敌人时难以造成有效伤害，因此我们的研究人员开发了“蜂刺”1mm单兵自卫武器。同时，我们的侦查系统一只落单的装甲丧尸，请前往坐标位置击杀并报告武器测试结果。"
+        ],
+        "responses":[
+            {
+                "text":"我接了，坐标在哪？",
+                "topic": "TALK_AZ_AA_CHOOSE_Special_Mission_1mm_YES"
+            },
+            {
+                "text": "我们先讨论一下其他事吧",
+                "topic": "TALK_AZ_AA_OUTER_Mission"
+            }
+        ]
+    },
+    {
+        "type":"talk_topic",
+        "id":"TALK_AZ_AA_CHOOSE_Special_Mission_1mm_YES",
+        "dynamic_line":[
+            "好，已记录。坐标已经标记在你的地图上。这是你的武器，请妥善使用。"
+        ],
+        "responses":[
+            {
+                "text":"好的，我会尽快完成。","topic":"TALK_DONE",
+                "effect":[
+                    { "assign_mission": "MISSION_AZ_AA_1mm" },
+                    { "u_spawn_item": "AZ_AA_1mm_gun", "count": 1 },
+                    { "u_spawn_item": "AZ_AA_1mm_AP", "count": 50 }
+                ]
+            }
+        ]
+    },
+    {
+        "type":"talk_topic",
+        "id":"TALK_AZ_AA_CHOOSE_Special_Mission_9mm_bomb",
+        "dynamic_line":[
+            "根据过往的行动报告，我们注意到现有装备存在压制性火力不足的战术缺陷。为弥补这一缺陷，我们设计了“炽隼”9mm榴弹发射器，但现在缺少实战测试数据。我们需要你前往坐标位置测试并回报测试结果。"
+        ],
+        "responses":[
+            {
+                "text":"我接了，坐标在哪？",
+                "topic": "TALK_AZ_AA_CHOOSE_Special_Mission_9mm_bomb_YES"
+            },
+            {
+                "text": "我们先讨论一下其他事吧",
+                "topic": "TALK_AZ_AA_OUTER_Mission"
+            }
+        ]
+    },
+    {
+        "type":"talk_topic",
+        "id":"TALK_AZ_AA_CHOOSE_Special_Mission_9mm_bomb_YES",
+        "dynamic_line":[
+            "好，已记录。坐标已经标记在你的地图上。这是你的武器，请妥善使用。"
+        ],
+        "responses":[
+            {
+                "text":"好的，我会尽快完成。","topic":"TALK_DONE",
+                "effect":[
+                    { "assign_mission": "MISSION_AZ_AA_9mm_bomb" },
+                    { "u_spawn_item": "AZ_AA_9mm_bomb_gun", "count": 1 },
+                    { "u_spawn_item": "AZ_AA_9mm_bomb_mag_20", "count": 1 },
+                    { "u_spawn_item": "AZ_AA_9mm_bomb_HE", "count": 20 }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "MISSION_AZ_AA_1mm",
+        "type": "mission_definition",
+        "name": { "str": "“蜂刺”测试" },
+        "goal": "MGOAL_KILL_MONSTERS",
+        "description": "使用实验性武器“蜂刺”击杀指定目标位置的怪物",
+        "difficulty": 10,
+        "value": 25,
+        "start": {
+          "assign_mission_target": { "var": { "global_val": "AZ_AA_loc_for_special_mission_1mm" }},
+          "update_mapgen": {
+            "place_monster": [
+              { "group": "GROUP_AZ_AA_1mm", "x": [ 1, 10 ], "y": [ 1, 10 ], "target": true, "name": "被标记的", "repeat": 1 }
+            ]
+          }
+        },
+        "end": {
+          "effect": [
+            { "u_add_var": "AZ_AA_complete_special_mission_1mm", "value": "yes" },
+            {
+              "u_message": "看起来结束了，回去交差吧。",
+              "popup": true
+            }
+          ]
+        }
+    },
+    {
+        "id": "MISSION_AZ_AA_9mm_bomb",
+        "type": "mission_definition",
+        "name": { "str": "“炽隼”测试" },
+        "goal": "MGOAL_KILL_MONSTERS",
+        "description": "使用实验性武器“炽隼”击杀指定目标位置的怪物",
+        "difficulty": 10,
+        "value": 25,
+        "start": {
+            "assign_mission_target": { "var": { "global_val": "AZ_AA_loc_for_special_mission_9mm_bomb" }},
+            "update_mapgen": {
+                "place_monster": [
+                    { "group": "GROUP_AZ_AA_9mm_bomb", "x": [ 1, 23 ], "y": [ 1, 23 ], "target": true, "name": "尸潮", "repeat": 70 }
+                ]
+            }
+        },
+        "end": {
+            "effect": [
+                { "u_add_var": "AZ_AA_complete_special_mission_9mm_bomb", "value": "yes" },
+                { "u_message": "看起来结束了，回去交差吧。", "popup": true }
+            ]
+        }
+    },
+    {
+        "type":"talk_topic",
+        "id":"TALK_AZ_AA_CHOOSE_Special_Mission_vortex",
+        "dynamic_line":[
+            "我们的外勤人员在调查实验室时收集到一份十分“特殊”的引擎设计图纸，其中提到了“漩涡石”，我们需要你尝试找到此物品。相关的资料指出，一些。。呃。螺旋状的矿洞中会自然产生“漩涡石”。由于相关情报的缺失，我们无法为你提供相应坐标。我们会为此支付一份“情报津贴”"
+        ],
+        "responses":[
+            {
+                "text":"我接了。",
+                "topic": "TALK_AZ_AA_CHOOSE_Special_Mission_vortex_YES"
+            },
+            {
+                "text": "我们先讨论一下其他事吧",
+                "topic": "TALK_AZ_AA_OUTER_Mission"
+            }
+        ]
+    },
+    {
+        "type":"talk_topic",
+        "id":"TALK_AZ_AA_CHOOSE_Special_Mission_vortex_YES",
+        "dynamic_line":[
+            "好，已记录。我期待你的好消息。"
+        ],
+        "//":"我们这里使用变量来开放提交通道",
+        "responses":[
+            {
+                "text":"好的，我会尽快回来。",
+                "topic":"TALK_DONE",
+                "effect":[
+                    { "u_add_var": "AZ_AA_vortex_var", "value": "yes" }
+                ]
+            }
+        ]
+    },
+    {
+        "type":"talk_topic",
+        "id":"TALK_AZ_AA_COMPLETE_Special_Mission_1mm",
+        "dynamic_line":[
+            "[她简单地扫视了你的报告]看起来效果不错，辛苦了。对了，这把武器是你的了，如果需要补充弹药的话，去找考特（枪械师）。"
+        ],
+        "responses":[
+            {
+                "text":"好的，再见。",
+                "topic":"TALK_DONE",
+                "effect":[
+                    { "u_spawn_item": "AZ_AA_FEAT", "count": 20 },
+                    { "u_add_var": "AZ_AA_have_complete_special_mission_1mm", "value": "yes" }
+                ]
+            }
+        ]
+    },
+    {
+        "type":"talk_topic",
+        "id":"TALK_AZ_AA_COMPLETE_Special_Mission_9mm_bomb",
+        "dynamic_line":[
+            "[她简单地扫视了你的报告]看起来效果不错，辛苦了。对了，这把武器是你的了，如果需要补充弹药的话，去找考特（枪械师）。"
+        ],
+        "responses":[
+            {
+                "text":"好的，再见。",
+                "topic":"TALK_DONE",
+                "effect":[
+                    { "u_spawn_item": "AZ_AA_FEAT", "count": 20 },
+                    { "u_add_var": "AZ_AA_have_complete_special_mission_9mm_bomb", "value": "yes" }
+                ]
+            }
+        ]
+    },
+    {
+        "type":"talk_topic",
+        "id":"TALK_AZ_AA_COMPLETE_Special_Mission_vortex",
+        "dynamic_line":[
+            "[她接过“漩涡石”]嗯，和资料上描述的特征一致。对了，我们在实验室中找到了它的样机，就作为你的报酬吧。如果你需要更多的话，可以来找我。另外这个是它的燃料，请务必妥善保存！"
+        ],
+        "responses":[
+            {
+                "text":"好的，再见。",
+                "topic":"TALK_DONE",
+                "effect":[
+                    { "u_spawn_item": "AZ_AA_FEAT", "count": 10 },
+                    { "u_add_var": "AZ_AA_vortex_var_complete", "value": "yes" },
+                    { "u_spawn_item": "AZ_AA_Vortex_Stone_engine", "count": 1 },
+                    { "u_buy_item": "AZ_AA_Vortex_liquid", "container": "AZ_AA_Vortex_liquid_container", "count": 100, "cost": 0 }
+                ]
+            }
+        ]
+    }
+]   
